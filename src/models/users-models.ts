@@ -31,3 +31,15 @@ export const insertUser = async (user: User) => {
 }
 catch(error){ throw error}
 };
+
+export const updateCoffebyUserEmail = async (email: User) => {
+  try{
+    let updatedUser = await db.collection('Users').findOneAndUpdate(
+      { email: email },
+      { $inc: { "coffee_count": 1 } },
+      { returnDocument: 'after' }
+    );
+    return updatedUser
+}
+catch(error){ throw error}
+};

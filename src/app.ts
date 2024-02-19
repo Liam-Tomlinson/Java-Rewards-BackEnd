@@ -1,10 +1,12 @@
 import express, { Application, Request, Response, NextFunction } from "express";
-import { router as userRoutes } from "./routes/user.routes";
+import { router as userRoutes } from "./routes/users.routes";
+import { router as shopsRoutes } from "./routes/shops.routes";
 
 const app: Application = express();
 app.use(express.json());
 
 app.use("/users", userRoutes);
+app.use("/shops",shopsRoutes);
 
 app.all("/*", (req: Request, res: Response, next: NextFunction) => {
   res.status(400).send("Bad Request");

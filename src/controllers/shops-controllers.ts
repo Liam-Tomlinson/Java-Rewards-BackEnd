@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { fetchShops, insertShop } from "../models/users-models";
+import { fetchShops,insertShop } from "../models/shops-models";
 
 export const getShops = async (req: Request, res: Response, next: NextFunction) => {
   const shops = await fetchShops();

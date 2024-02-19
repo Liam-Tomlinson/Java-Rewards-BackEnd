@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 import { MongoClient, Db, ObjectId } from "mongodb";
 import { connectDatabase, client } from "../dbConnection";
-import { getUsers, postUser } from "../controllers/users-controllers";
+import { getUsers, patchUserCoffee, postUser } from "../controllers/users-controllers";
 const router = Router();
 let db: Db;
 
@@ -9,7 +9,6 @@ connectDatabase().then((database) => {
   db = database;
 });
 router.get("/", getUsers);
-
 router.get("/:user_id", async (req: Request, res: Response) => {
   try {
     const user_id = req.params.user_id;
@@ -27,5 +26,6 @@ router.get("/:user_id", async (req: Request, res: Response) => {
   }
 });
 router.post("/", postUser);
+router.patch("/coffee", patchUserCoffee);
 
 export { router };

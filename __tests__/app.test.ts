@@ -30,7 +30,6 @@ describe("GET /users", () => {
     expect(res.status).toBe(400);
   });
 });
-
 describe("POST /users", () => {
   test("Should add a new user to database", async () => {
     const userBody = {
