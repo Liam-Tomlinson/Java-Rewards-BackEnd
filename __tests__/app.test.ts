@@ -1,17 +1,26 @@
 import request from "supertest";
-
+import { connectDatabase, client } from "../src/dbConnection";
 import app from "../src/app";
-
-describe("Test app.ts", () => {
-  test("Catch-all route", async () => {
-    const res = await request(app).get("/");
-    expect(res.body).toEqual({ message: "Allo! Catch-all route." });
-  });
+import { populateTestData } from "../src/seed";
+import { Db } from "mongodb";
+let db: Db;
+beforeAll(async () => {
+  db = await connectDatabase();
+});
+beforeEach(async () => {
+  await populateTestData();
+});
+afterAll(async () => {
+  await client.close();
 });
 
-describe("User routes", () => {
-  test("Get all users", async () => {
+describe("Get /users", () => {
+  test("Should return an array of all users", async () => {
     const res = await request(app).get("/users");
-    expect(res.body).toEqual(["Goon", "Tsuki", "Joe"]);
+    const expected = res.body.users;
+
+    expect(expected).toHaveLength(10);
+
+    expect(res.status).toBe(200);
   });
 });
