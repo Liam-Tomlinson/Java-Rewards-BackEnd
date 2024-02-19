@@ -7,7 +7,9 @@ let db: Db;
 beforeAll(async () => {
   db = await connectDatabase();
 });
-
+/* beforeEach(()=>{
+  return populateTestData()
+}) */
 afterAll(async () => {
   await populateTestData();
   await client.close();
@@ -36,8 +38,7 @@ describe("POST /users", () => {
       age: 40,
       email: "moe@example.com",
       avatar_url: "http://example.com/avatar11.jpg",
-      coffee_count: 0,
-    };
+        };
     const res = await request(app).post("/users").send(userBody);
     expect(res.status).toBe(201);
   });

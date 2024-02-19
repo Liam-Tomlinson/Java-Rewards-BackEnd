@@ -36,39 +36,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.populateTestData = void 0;
+var seed_1 = require("./seed");
 var dbConnection_1 = require("./dbConnection");
-var shopData_1 = require("./test_data/shopData");
-var userData_1 = require("./test_data/userData");
-var ordersData_1 = require("./test_data/ordersData");
-var populateTestData = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var db, shops, users, orders;
+var seedDatabase = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, dbConnection_1.connectDatabase)()];
+            case 0: return [4 /*yield*/, (0, seed_1.populateTestData)()];
             case 1:
-                db = _a.sent();
-                console.log("Dropping database...");
-                return [4 /*yield*/, db.dropDatabase()];
+                _a.sent();
+                console.log('Database has been seeded successfully.');
+                return [4 /*yield*/, dbConnection_1.client.close()];
             case 2:
                 _a.sent();
-                shops = db.collection("CoffeeShops");
-                users = db.collection("Users");
-                orders = db.collection("Orders");
-                db.collection("CoffeeShops").createIndex({ name: 1 }, { unique: true });
-                db.collection("Users").createIndex({ email: 1 }, { unique: true });
-                return [4 /*yield*/, shops.insertMany(shopData_1.shopData)];
-            case 3:
-                _a.sent();
-                return [4 /*yield*/, users.insertMany(userData_1.userData)];
-            case 4:
-                _a.sent();
-                return [4 /*yield*/, orders.insertMany(ordersData_1.ordersData)];
-            case 5:
-                _a.sent();
-                console.log("Test data has been populated.");
                 return [2 /*return*/];
         }
     });
 }); };
-exports.populateTestData = populateTestData;
+seedDatabase();

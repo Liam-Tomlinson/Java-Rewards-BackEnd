@@ -11,7 +11,13 @@ export const fetchUsers = async () => {
   return users;
 };
 
-export const insertUser = async (user: any) => {
+interface User extends Object {
+  name?: string,
+  age?: number,
+  email: string,
+  avatar_url?: string,
+}
+export const insertUser = async (user: User) => {
   try{
   const newUser = await db.collection("Users").insertOne({
     name: user.name,
