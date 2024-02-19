@@ -71,7 +71,7 @@ var populateTestData = function () { return __awaiter(void 0, void 0, void 0, fu
     });
 }); };
 exports.populateTestData = populateTestData;
-// populateTestData().then(() => client.close());
+//populateTestData().then(() => client.close());
 var shopData = [
     {
         shop_id: 1,

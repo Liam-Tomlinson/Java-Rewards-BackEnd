@@ -26,7 +26,7 @@ export const populateTestData = async () => {
   console.log("Test data has been populated.");
 };
 
-// populateTestData().then(() => client.close());
+//populateTestData().then(() => client.close());
 
 const shopData: object[] = [
   {

@@ -1,5 +1,4 @@
 import express, { Application, Request, Response, NextFunction } from "express";
-// import { connectDatabase, client } from "./dbConnection";
 import { router as userRoutes } from "./routes/user.routes";
 
 const app: Application = express();
