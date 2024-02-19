@@ -12,6 +12,7 @@ export const fetchUsers = async () => {
 };
 
 export const insertUser = async (user: any) => {
+  try{
   const newUser = await db.collection("Users").insertOne({
     name: user.name,
     age: user.age,
@@ -19,6 +20,8 @@ export const insertUser = async (user: any) => {
     avatar_url: user.avatar_url,
     coffee_count: 0,
   });
-
+ 
   return newUser;
+}
+catch(error){ throw error}
 };

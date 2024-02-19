@@ -53,6 +53,7 @@ var populateTestData = function () { return __awaiter(void 0, void 0, void 0, fu
                 users = db.collection("Users");
                 orders = db.collection("Orders");
                 db.collection("CoffeeShops").createIndex({ name: 1 }, { unique: true });
+                db.collection("Users").createIndex({ email: 1 }, { unique: true });
                 console.log("Seeding database ".concat(db.databaseName, " , collection ").concat(shops.collectionName, "..."));
                 return [4 /*yield*/, shops.insertMany(shopData)];
             case 3:

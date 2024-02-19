@@ -24,6 +24,7 @@ export const postUser = async (
 
     res.status(201).send(newUser);
   } catch (error) {
+    
     next(error);
   }
 };

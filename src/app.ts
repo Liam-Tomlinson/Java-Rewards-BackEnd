@@ -9,8 +9,19 @@ app.use("/users", userRoutes);
 app.all("/*", (req: Request, res: Response, next: NextFunction) => {
   res.status(400).send("Bad Request");
 });
-app.use((req: Request, res: Response, next: NextFunction) => {
-  res.status(500).send("internal server error");
+
+interface CustomError extends Error {
+  code?: number;
+}
+app.use((err:CustomError,req: Request, res: Response, next: NextFunction) => {
+  
+  if (err.code===11000){
+    res.status(400).send(err);
+  }
+  else{
+
+    res.status(500).send("internal server error");
+  }
 });
 
 export default app;

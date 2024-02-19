@@ -10,17 +10,12 @@ export const populateTestData = async () => {
   const users = db.collection("Users");
   const orders = db.collection("Orders");
   db.collection("CoffeeShops").createIndex({ name: 1 }, { unique: true });
-  console.log(
-    `Seeding database ${db.databaseName} , collection ${shops.collectionName}...`
-  );
+  db.collection("Users").createIndex({ email: 1 }, { unique: true });
+
   await shops.insertMany(shopData);
-  console.log(
-    `Seeding database ${db.databaseName} , collection ${users.collectionName}...`
-  );
+
   await users.insertMany(userData);
-  console.log(
-    `Seeding database ${db.databaseName} , collection ${orders.collectionName}...`
-  );
+
   await orders.insertMany(ordersData);
 
   console.log("Test data has been populated.");

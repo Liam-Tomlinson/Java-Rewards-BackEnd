@@ -20,7 +20,7 @@ router.get("/:user_id", async (req: Request, res: Response) => {
       .toArray();
     res.status(200).send({ user });
   } catch (err) {
-    console.log(err);
+    
     res
       .status(500)
       .send({ message: "An error occurred while fetching a user by id." });
