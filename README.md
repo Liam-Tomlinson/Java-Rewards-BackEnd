@@ -1,5 +1,9 @@
 # Java-Rewards-BackEnd
 
+### npm run dev - start the server
+### npm run seed - seed Database
+
+
 
 API Endpoints:
 
