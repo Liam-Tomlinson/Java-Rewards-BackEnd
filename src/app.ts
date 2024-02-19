@@ -7,8 +7,11 @@ app.use(express.json());
 
 app.use("/users", userRoutes);
 
-app.use("/", (req: Request, res: Response, next: NextFunction): void => {
-  res.json({ message: "Allo! Catch-all route." });
+app.all("/*", (req: Request, res: Response, next: NextFunction) => {
+  res.status(400).send("Bad Request");
+});
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(500).send("internal server error");
 });
 
 export default app;

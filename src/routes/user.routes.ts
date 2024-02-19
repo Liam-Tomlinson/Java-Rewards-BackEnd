@@ -1,23 +1,14 @@
 import { Router, Request, Response } from "express";
 import { MongoClient, Db, ObjectId } from "mongodb";
 import { connectDatabase, client } from "../dbConnection";
+import { getUsers } from "../controllers/users-controllers";
 const router = Router();
 let db: Db;
 
 connectDatabase().then((database) => {
   db = database;
 });
-router.get("/", async (req: Request, res: Response) => {
-  try {
-    const users = await db.collection("Users").find({}).toArray();
-    res.status(200).send({ users });
-  } catch (err) {
-    console.log(err);
-    res
-      .status(500)
-      .send({ message: "An error occurred while fetching users." });
-  }
-});
+router.get("/", getUsers);
 
 router.get("/:user_id", async (req: Request, res: Response) => {
   try {
@@ -39,15 +30,13 @@ router.post("/", async (req: Request, res: Response) => {
   try {
     const newUser = req.body;
 
-    const response = await db
-      .collection("Users")
-      .insertOne({
-        name: newUser.name,
-        age: newUser.age,
-        email: newUser.email,
-        avatar_url: newUser.avatar_url,
-        coffee_count: 0,
-      });
+    const response = await db.collection("Users").insertOne({
+      name: newUser.name,
+      age: newUser.age,
+      email: newUser.email,
+      avatar_url: newUser.avatar_url,
+      coffee_count: 0,
+    });
     res.status(201).send({ response });
   } catch (err) {
     console.log(err);

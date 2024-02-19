@@ -23,4 +23,10 @@ describe("Get /users", () => {
 
     expect(res.status).toBe(200);
   });
+  test("Should return error for wrong path 400", async () => {
+    const res = await request(app).get("/alexsis");
+    console.log(res, "line 111");
+
+    expect(res.status).toBe(400);
+  });
 });
