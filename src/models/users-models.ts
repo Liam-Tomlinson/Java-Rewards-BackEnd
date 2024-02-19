@@ -6,10 +6,19 @@ connectDatabase().then((database) => {
 });
 
 export const fetchUsers = async () => {
-    console.log("hello");
-    
- const  users = await db.collection("Users").find({}).toArray();
- console.log(users,"user");
- 
- return users
+  const users = await db.collection("Users").find({}).toArray();
+
+  return users;
+};
+
+export const insertUser = async (user: any) => {
+  const newUser = await db.collection("Users").insertOne({
+    name: user.name,
+    age: user.age,
+    email: user.email,
+    avatar_url: user.avatar_url,
+    coffee_count: 0,
+  });
+
+  return newUser;
 };

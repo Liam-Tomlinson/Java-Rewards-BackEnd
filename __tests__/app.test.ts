@@ -25,7 +25,25 @@ describe("Get /users", () => {
   });
   test("Should return error for wrong path 400", async () => {
     const res = await request(app).get("/alexsis");
-    console.log(res, "line 111");
+
+    expect(res.status).toBe(400);
+  });
+});
+
+describe("Post /user", () => {
+  test("Should add a new user to database", async () => {
+    const userBody = {
+      name: "Mohammed Ali",
+      age: 40,
+      email: "moe@example.com",
+      avatar_url: "http://example.com/avatar11.jpg",
+      coffee_count: 0,
+    };
+    const res = await request(app).post("/users").send(userBody);
+    expect(res.status).toBe(201);
+  });
+  test("Should return error for wrong path 400", async () => {
+    const res = await request(app).get("/alexsis");
 
     expect(res.status).toBe(400);
   });

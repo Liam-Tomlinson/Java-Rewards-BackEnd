@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 import { MongoClient, Db, ObjectId } from "mongodb";
 import { connectDatabase, client } from "../dbConnection";
-import { getUsers } from "../controllers/users-controllers";
+import { getUsers, postUser } from "../controllers/users-controllers";
 const router = Router();
 let db: Db;
 
@@ -26,24 +26,6 @@ router.get("/:user_id", async (req: Request, res: Response) => {
       .send({ message: "An error occurred while fetching a user by id." });
   }
 });
-router.post("/", async (req: Request, res: Response) => {
-  try {
-    const newUser = req.body;
-
-    const response = await db.collection("Users").insertOne({
-      name: newUser.name,
-      age: newUser.age,
-      email: newUser.email,
-      avatar_url: newUser.avatar_url,
-      coffee_count: 0,
-    });
-    res.status(201).send({ response });
-  } catch (err) {
-    console.log(err);
-    res
-      .status(500)
-      .send({ message: "An error occurred while fetching a user by id." });
-  }
-});
+router.post("/", postUser);
 
 export { router };
