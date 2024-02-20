@@ -72,7 +72,7 @@ describe("POST /users", () => {
     expect(response.body.code).toBe(11000);
   });
 });
-describe("POST /Shops", () => {
+describe("POST /shops", () => {
   test("Should add a new shop to database", async () => {
     const shopBody = {
       name: "Probeans",
@@ -102,7 +102,7 @@ describe("POST /Shops", () => {
     expect(res.status).toBe(400);
   });
 });
-describe("Patch /users/coffe", () => {
+describe("PATCH users/coffee", () => {
   test("should increase coffee count and 201 status", async () => {
     const userBody = {
       email: "jane@example.com",
@@ -119,7 +119,7 @@ describe("Patch /users/coffe", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("Get user by email", () => {
+describe("GET users/email", () => {
   test("should return user by given email", async () => {
     const email = { email: "emily@example.com" };
     const res = await request(app).get("/users/email").send(email);
@@ -132,7 +132,7 @@ describe("Get user by email", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("Get shop by email", () => {
+describe("GET /shops/email", () => {
   test("should return shop by given email", async () => {
     const email = { email: "mancunianbrew@example.com" };
     const res = await request(app).get("/shops/email").send(email);
@@ -146,7 +146,7 @@ describe("Get shop by email", () => {
   });
 });
 
-describe("Delete shop by email", () => {
+describe("DELETE /shops/email", () => {
   test("should delete shop by email", async () => {
     const email = { email: "citygrind@example.com" };
     const res = await request(app).delete("/shops/email").send(email);
@@ -158,7 +158,7 @@ describe("Delete shop by email", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("Patch /shop/email", () => {
+describe("PATCH /shops/email", () => {
   test("should update shop profile", async () => {
     const shopBody = {
       email: "mancunianbrew@example.com",
@@ -175,7 +175,7 @@ describe("Patch /shop/email", () => {
     expect(res.status).toBe(201);
   });
 });
-describe("Delete user by email", () => {
+describe("DELETE users/email", () => {
   test("should delete user by email", async () => {
     const email = { email: "michael@example.com" };
     const res = await request(app).delete("/users/email").send(email);
