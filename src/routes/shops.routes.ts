@@ -1,7 +1,13 @@
 import { Router, Request, Response } from "express";
 import { MongoClient, Db, ObjectId } from "mongodb";
 import { connectDatabase, client } from "../dbConnection";
-import { getShops,postShop } from "../controllers/shops-controllers";
+import {
+  getShops,
+  postShop,
+  getShopByEmail,
+  deleteShopByEmail,
+  patchShopByEmail,
+} from "../controllers/shops-controllers";
 const router = Router();
 let db: Db;
 
@@ -11,5 +17,8 @@ connectDatabase().then((database) => {
 
 router.get("/", getShops);
 router.post("/", postShop);
+router.get("/email", getShopByEmail);
+router.delete("/email", deleteShopByEmail);
+router.patch("/email", patchShopByEmail);
 
 export { router };

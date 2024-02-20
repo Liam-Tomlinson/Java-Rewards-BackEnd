@@ -6,7 +6,7 @@ const app: Application = express();
 app.use(express.json());
 
 app.use("/users", userRoutes);
-app.use("/shops",shopsRoutes);
+app.use("/shops", shopsRoutes);
 
 app.all("/*", (req: Request, res: Response, next: NextFunction) => {
   res.status(400).send("Bad Request");
@@ -14,14 +14,16 @@ app.all("/*", (req: Request, res: Response, next: NextFunction) => {
 
 interface CustomError extends Error {
   code?: number;
+  msg?: string;
+  status?: number;
 }
-app.use((err:CustomError,req: Request, res: Response, next: NextFunction) => {
-  
-  if (err.code===11000){
+app.use((err: CustomError, req: Request, res: Response, next: NextFunction) => {
+  if (err.code === 11000) {
     res.status(400).send(err);
   }
-  else{
-
+  if (err.status === 404) {
+    res.status(404).send(err.msg);
+  } else {
     res.status(500).send("internal server error");
   }
 });

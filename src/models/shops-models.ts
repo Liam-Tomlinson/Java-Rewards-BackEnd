@@ -34,14 +34,57 @@ export const insertShop = async (shop: Shop) => {
     let data: any = {};
 
     if (newShop.acknowledged) {
-     
       data = await db
         .collection("CoffeeShops")
         .findOne({ _id: newShop.insertedId });
-     
     }
 
     return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const fetchShopsByEmail = async (email: Shop) => {
+  const shop = await db
+    .collection("CoffeeShops")
+    .find({ email: email })
+    .toArray();
+  if (shop.length === 0) {
+    return Promise.reject({
+      status: 404,
+      msg: "email not found",
+    });
+  } else {
+    return shop;
+  }
+};
+
+export const removeShopsByEmail = async (email: Shop) => {
+  const shop = await db.collection("CoffeeShops").deleteOne({ email: email });
+
+  return shop;
+};
+export const updateShopByEmail = async (shop: Shop) => {
+    const {email,description} = shop
+  try {
+    let updatedShop = await db
+      .collection("CoffeeShops")
+      .findOneAndUpdate(
+        { email: email },
+        { description:description },
+        { returnDocument: "after" }
+      );
+      
+      
+    if (updatedShop === null) {
+      return Promise.reject({
+        status: 404,
+        msg: "Shop not found",
+      });
+    } else {
+      return updatedShop;
+    }
   } catch (error) {
     throw error;
   }

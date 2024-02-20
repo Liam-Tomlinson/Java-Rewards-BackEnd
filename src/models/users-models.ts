@@ -12,10 +12,10 @@ export const fetchUsers = async () => {
 };
 
 interface User extends Object {
-  name?: string,
-  age?: number,
-  email: string,
-  avatar_url?: string,
+  name?: string;
+  age?: number;
+  email: string;
+  avatar_url?: string;
 }
 export const insertUser = async (user: User) => {
   try {
@@ -29,27 +29,44 @@ export const insertUser = async (user: User) => {
     let data: any = {};
 
     if (newUser.acknowledged) {
-
-      data = await db
-        .collection("Users")
-        .findOne({ _id: newUser.insertedId });
-
+      data = await db.collection("Users").findOne({ _id: newUser.insertedId });
     }
 
     return data;
-
+  } catch (error) {
+    throw error;
   }
-  catch (error) { throw error }
 };
 
 export const updateCoffebyUserEmail = async (email: User) => {
   try {
-    let updatedUser = await db.collection('Users').findOneAndUpdate(
-      { email: email },
-      { $inc: { "coffee_count": 1 } },
-      { returnDocument: 'after' }
-    );
-    return updatedUser
+    let updatedUser = await db
+      .collection("Users")
+      .findOneAndUpdate(
+        { email: email },
+        { $inc: { coffee_count: 1 } },
+        { returnDocument: "after" }
+      );
+    if (updatedUser === null) {
+      return Promise.reject({
+        status: 404,
+        msg: "User not found",
+      });
+    } else {
+      return updatedUser;
+    }
+  } catch (error) {
+    throw error;
   }
-  catch (error) { throw error }
+};
+export const fetchUserByEmail = async (email: User) => {
+  const user = await db.collection("Users").find({ email: email }).toArray();
+  if (user.length === 0) {
+    return Promise.reject({
+      status: 404,
+      msg: "email not found",
+    });
+  } else {
+    return user;
+  }
 };

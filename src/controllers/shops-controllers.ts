@@ -1,7 +1,17 @@
 import { NextFunction, Request, Response } from "express";
-import { fetchShops,insertShop } from "../models/shops-models";
+import {
+  fetchShops,
+  insertShop,
+  fetchShopsByEmail,
+  removeShopsByEmail,
+  updateShopByEmail,
+} from "../models/shops-models";
 
-export const getShops = async (req: Request, res: Response, next: NextFunction) => {
+export const getShops = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   const shops = await fetchShops();
   try {
     res.send({ shops });
@@ -9,14 +19,58 @@ export const getShops = async (req: Request, res: Response, next: NextFunction) 
     next(error);
   }
 };
-export const postShop = async (req: Request, res: Response, next: NextFunction) => {
+export const postShop = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const newShop = req.body;
     const shop = await insertShop(newShop);
 
-    res.status(201).send({shop});
+    res.status(201).send({ shop });
   } catch (error) {
+    next(error);
+  }
+};
+export const getShopByEmail = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const email = req.body.email;
 
+    const shop = await fetchShopsByEmail(email);
+    res.status(200).send({ shop });
+  } catch (error) {
+    next(error);
+  }
+};
+export const deleteShopByEmail = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const email = req.body.email;
+    const removed = await removeShopsByEmail(email);
+    res.status(204).send({ msg: "Shop Removed" });
+  } catch (error) {
+    next(error);
+  }
+};
+export const patchShopByEmail = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const upShop = req.body;
+    const shop = await updateShopByEmail(upShop);
+
+    res.status(201).send({ shop });
+  } catch (error) {
     next(error);
   }
 };
