@@ -2,36 +2,36 @@
 
 $ sudo systemctl start mongod - starts mongodb locally
 
-### npm run dev - start the server
-### npm run seed - seed Database
+> npm run dev - starts the server  
+ npm run seed - seeds Database
 
 # .env enviroment variables
-- **PORT=9999**
-- **STATUS=dev**
-- **MONGO=mongodb://localhost:27017/javarewards_test**
+> **PORT=9999**  
+> **STATUS=dev**  
+> **MONGO=mongodb://localhost:27017/javarewards_test**
 
 
 # API Endpoints:
 
-## /users
+## /users  
 - GET - responds with *users* object with array of all users
-- POST - { **name**: string, **age**: number, **email**: string, **avatar_url**: string}
+- POST - `{ name, age: number, email, avatar_url}`
 - ### /users/email
-    - GET - { **email** : string} - responds with user by given email
-    - PATCH - { **email** : string, age: ...} - updates shop by given email
-    - DELETE - { **email** : string} - deletes user
+    - GET - `{ email }` - responds with user by given email
+    - PATCH - `{ email , age: ...}` - updates shop by given email
+    - DELETE -` { email }` - deletes user
 - ### /coffee
-    - PATCH - { **email** : string} - updates coffee count by 1
+    - PATCH - `{ email } `- updates coffee count by 1
 ## /shops
 - GET - responds with *shops* object with array of all coffee shops
-- POST - { **name**: string, **email**: number, **lat**: number, **long**: number, **description** : string, **avatar_url**: string}
+- POST - `{ name, email, lat , long, description , avatar_url}`
 - ### /shops/email
-    - GET - { **email** : string} - responds with shop by given email
-    - PATCH - { **email** : string, description: ...} - updates shop by given email
-    - DELETE - { **email** : string} - deletes shop
+    - GET - `{ email }` - responds with shop by given email
+    - PATCH - `{ email : , description: ...}` - updates shop by given email
+    - DELETE - `{ email } `- deletes shop
 - ### /shops/menu
-    - PATCH - { **email** : string, **menu**: [ { item, cost,description, item_img } ,...] }
+    - PATCH - `{ email , menu: [ { item, cost,description, item_img } ,...] }`
 ## /orders
 - GET - responds with *orders* object with array of all orders
-    - can filter by shop_id, user_id and itemName **/orders?shop_id=1&itemName=Capuccino**
-- POST - inserts or updates order { **user_email**, **shop_email**, **item**, **quantity**, **price** } 
+    - can filter by shop_id, user_id and itemName `/orders?shop_id=1&itemName=Capuccino`
+- POST - inserts or updates order | Request Body: `{ user_email, shop_email, item, quantity, price } `
