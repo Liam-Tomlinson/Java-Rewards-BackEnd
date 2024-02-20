@@ -21,6 +21,8 @@ export const client = new MongoClient(uri,{
 export const connectDatabase = async () => {
   try {
     await client.connect();
+    console.log(`connected to database`)
+    console.log((client as any).s.url);
     return client.db("JavaRewards");
   } catch (error) {
     console.error("Could not connect to the database", error);

@@ -64,6 +64,8 @@ var connectDatabase = function () { return __awaiter(void 0, void 0, void 0, fun
                 return [4 /*yield*/, exports.client.connect()];
             case 1:
                 _a.sent();
+                console.log("connected to database");
+                console.log(exports.client.s.url);
                 return [2 /*return*/, exports.client.db("JavaRewards")];
             case 2:
                 error_1 = _a.sent();
