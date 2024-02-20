@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1708383979723" clover="3.2.0">
-  <project timestamp="1708383979724" name="All files">
-    <metrics statements="196" coveredstatements="158" conditionals="156" coveredconditionals="87" methods="56" coveredmethods="40" elements="408" coveredelements="285" complexity="0" loc="196" ncloc="196" packages="5" files="12" classes="12"/>
+<coverage generated="1708420693933" clover="3.2.0">
+  <project timestamp="1708420693933" name="All files">
+    <metrics statements="208" coveredstatements="166" conditionals="156" coveredconditionals="87" methods="60" coveredmethods="44" elements="424" coveredelements="297" complexity="0" loc="208" ncloc="208" packages="5" files="12" classes="12"/>
     <package name="src">
       <metrics statements="117" coveredstatements="100" conditionals="156" coveredconditionals="87" methods="34" coveredmethods="28"/>
       <file name="app.ts" path="/home/alexis/BackEndJavaRewards/src/app.ts">
@@ -14,55 +14,55 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="20" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="2" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
       </file>
       <file name="dbConnection.js" path="/home/alexis/BackEndJavaRewards/src/dbConnection.js">
         <metrics statements="46" coveredstatements="38" conditionals="76" coveredconditionals="46" methods="16" coveredmethods="13"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="10" type="cond" truecount="1" falsecount="1"/>
-        <line num="4" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="10" type="stmt"/>
+        <line num="3" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="6" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="7" count="20" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="6" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="12" count="10" type="cond" truecount="1" falsecount="1"/>
-        <line num="13" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="30" type="stmt"/>
-        <line num="16" count="20" type="cond" truecount="1" falsecount="1"/>
-        <line num="17" count="50" type="cond" truecount="3" falsecount="1"/>
-        <line num="18" count="50" type="cond" truecount="2" falsecount="11"/>
-        <line num="19" count="50" type="cond" truecount="1" falsecount="1"/>
-        <line num="20" count="50" type="cond" truecount="4" falsecount="2"/>
-        <line num="21" count="20" type="stmt"/>
-        <line num="22" count="10" type="stmt"/>
+        <line num="12" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="16" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="30" type="cond" truecount="3" falsecount="1"/>
+        <line num="18" count="30" type="cond" truecount="2" falsecount="11"/>
+        <line num="19" count="30" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="30" type="cond" truecount="4" falsecount="2"/>
+        <line num="21" count="12" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="20" type="cond" truecount="7" falsecount="0"/>
-        <line num="27" count="10" type="cond" truecount="2" falsecount="4"/>
-        <line num="28" count="10" type="cond" truecount="2" falsecount="2"/>
-        <line num="29" count="10" type="cond" truecount="3" falsecount="1"/>
-        <line num="30" count="10" type="cond" truecount="1" falsecount="1"/>
-        <line num="31" count="10" type="stmt"/>
-        <line num="33" count="20" type="stmt"/>
-        <line num="34" count="50" type="stmt"/>
-        <line num="35" count="10" type="cond" truecount="2" falsecount="2"/>
+        <line num="26" count="12" type="cond" truecount="7" falsecount="0"/>
+        <line num="27" count="6" type="cond" truecount="2" falsecount="4"/>
+        <line num="28" count="6" type="cond" truecount="2" falsecount="2"/>
+        <line num="29" count="6" type="cond" truecount="3" falsecount="1"/>
+        <line num="30" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="33" count="12" type="stmt"/>
+        <line num="34" count="30" type="stmt"/>
+        <line num="35" count="6" type="cond" truecount="2" falsecount="2"/>
         <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
-        <line num="42" count="10" type="stmt"/>
-        <line num="44" count="10" type="stmt"/>
-        <line num="45" count="20" type="cond" truecount="2" falsecount="2"/>
-        <line num="47" count="10" type="stmt"/>
-        <line num="48" count="10" type="stmt"/>
-        <line num="50" count="10" type="stmt"/>
-        <line num="51" count="10" type="stmt"/>
+        <line num="42" count="6" type="stmt"/>
+        <line num="44" count="6" type="stmt"/>
+        <line num="45" count="12" type="cond" truecount="2" falsecount="2"/>
+        <line num="47" count="6" type="stmt"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="50" count="6" type="stmt"/>
+        <line num="51" count="6" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
@@ -73,73 +73,73 @@
       <file name="seed.js" path="/home/alexis/BackEndJavaRewards/src/seed.js">
         <metrics statements="57" coveredstatements="49" conditionals="78" coveredconditionals="40" methods="16" coveredmethods="13"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="3" count="25" type="cond" truecount="1" falsecount="1"/>
-        <line num="4" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="5" count="25" type="stmt"/>
+        <line num="3" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="5" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="7" count="30" type="cond" truecount="2" falsecount="0"/>
-        <line num="8" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="1" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="1" type="cond" truecount="3" falsecount="0"/>
-        <line num="12" count="25" type="cond" truecount="1" falsecount="1"/>
-        <line num="13" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="30" type="stmt"/>
-        <line num="16" count="30" type="cond" truecount="1" falsecount="1"/>
-        <line num="17" count="60" type="cond" truecount="3" falsecount="1"/>
-        <line num="18" count="60" type="cond" truecount="2" falsecount="11"/>
-        <line num="19" count="60" type="cond" truecount="1" falsecount="1"/>
-        <line num="20" count="60" type="cond" truecount="4" falsecount="2"/>
-        <line num="21" count="30" type="stmt"/>
-        <line num="22" count="25" type="stmt"/>
+        <line num="12" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="16" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="12" type="cond" truecount="3" falsecount="1"/>
+        <line num="18" count="12" type="cond" truecount="2" falsecount="11"/>
+        <line num="19" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="12" type="cond" truecount="4" falsecount="2"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="5" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="5" type="cond" truecount="5" falsecount="2"/>
+        <line num="26" count="1" type="cond" truecount="5" falsecount="2"/>
         <line num="27" count="0" type="cond" truecount="0" falsecount="6"/>
         <line num="28" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="29" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="33" count="30" type="stmt"/>
-        <line num="34" count="60" type="stmt"/>
-        <line num="35" count="5" type="cond" truecount="2" falsecount="2"/>
+        <line num="33" count="6" type="stmt"/>
+        <line num="34" count="12" type="stmt"/>
+        <line num="35" count="1" type="cond" truecount="2" falsecount="2"/>
         <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
         <line num="42" count="1" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
-        <line num="44" count="5" type="stmt"/>
-        <line num="46" count="5" type="stmt"/>
-        <line num="47" count="30" type="cond" truecount="6" falsecount="0"/>
-        <line num="48" count="5" type="stmt"/>
-        <line num="50" count="5" type="stmt"/>
-        <line num="51" count="5" type="stmt"/>
-        <line num="52" count="5" type="stmt"/>
-        <line num="54" count="5" type="stmt"/>
-        <line num="55" count="5" type="stmt"/>
-        <line num="56" count="5" type="stmt"/>
-        <line num="57" count="5" type="stmt"/>
-        <line num="58" count="5" type="stmt"/>
-        <line num="59" count="5" type="stmt"/>
-        <line num="60" count="5" type="stmt"/>
-        <line num="62" count="5" type="stmt"/>
-        <line num="63" count="5" type="stmt"/>
-        <line num="65" count="5" type="stmt"/>
-        <line num="66" count="5" type="stmt"/>
-        <line num="68" count="5" type="stmt"/>
-        <line num="69" count="5" type="stmt"/>
-        <line num="70" count="5" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="6" type="cond" truecount="6" falsecount="0"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
         <line num="74" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="24" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="4"/>
+      <metrics statements="30" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
       <file name="shops-controllers.ts" path="/home/alexis/BackEndJavaRewards/src/controllers/shops-controllers.ts">
-        <metrics statements="12" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
@@ -149,7 +149,7 @@
         <line num="20" count="0" type="stmt"/>
       </file>
       <file name="users-controllers.ts" path="/home/alexis/BackEndJavaRewards/src/controllers/users-controllers.ts">
-        <metrics statements="12" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <metrics statements="18" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="4"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -160,20 +160,26 @@
         <line num="13" count="3" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.models">
-      <metrics statements="22" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
+      <metrics statements="27" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="8"/>
       <file name="shops-models.ts" path="/home/alexis/BackEndJavaRewards/src/models/shops-models.ts">
-        <metrics statements="11" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="1"/>
+        <metrics statements="11" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
@@ -181,7 +187,7 @@
         <line num="39" count="0" type="stmt"/>
       </file>
       <file name="users-models.ts" path="/home/alexis/BackEndJavaRewards/src/models/users-models.ts">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <metrics statements="16" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -191,12 +197,17 @@
         <line num="20" count="3" type="stmt"/>
         <line num="21" count="3" type="stmt"/>
         <line num="22" count="3" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.routes">
-      <metrics statements="24" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+      <metrics statements="25" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="shops.routes.ts" path="/home/alexis/BackEndJavaRewards/src/routes/shops.routes.ts">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -210,7 +221,7 @@
         <line num="15" count="1" type="stmt"/>
       </file>
       <file name="users.routes.ts" path="/home/alexis/BackEndJavaRewards/src/routes/users.routes.ts">
-        <metrics statements="15" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <metrics statements="16" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -225,7 +236,8 @@
         <line num="20" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="30" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.test_data">

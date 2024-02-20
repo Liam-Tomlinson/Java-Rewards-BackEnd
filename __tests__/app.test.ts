@@ -30,6 +30,21 @@ describe("GET /users", () => {
     expect(res.status).toBe(400);
   });
 });
+describe("GET /shops", () => {
+  test("Should return an array of all users", async () => {
+    const res = await request(app).get("/shops");
+    const expected = res.body.shops;
+
+    expect(expected).toHaveLength(4);
+
+    expect(res.status).toBe(200);
+  });
+  test("Should return error for wrong path 400", async () => {
+    const res = await request(app).get("/alexis");
+
+    expect(res.status).toBe(400);
+  });
+});
 describe("POST /users", () => {
   test("Should add a new user to database", async () => {
     const userBody = {
