@@ -1,13 +1,17 @@
 # Java-Rewards-BackEnd
 
-$ sudo systemctl start mongod 
+$ sudo systemctl start mongod - starts mongodb locally
 
 ### npm run dev - start the server
 ### npm run seed - seed Database
 
+# .env enviroment variables
+- **PORT=9999**
+- **STATUS=dev**
+- **MONGO=mongodb://localhost:27017/javarewards_test**
 
 
-API Endpoints:
+# API Endpoints:
 
 ## /users
 - GET - responds with *users* object with array of all users
