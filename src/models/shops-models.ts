@@ -71,8 +71,8 @@ export const updateShopByEmail = async (shop: Shop) => {
     let updatedShop = await db
       .collection("CoffeeShops")
       .findOneAndUpdate(
-        { email: email },
-        { description:description },
+        { email },
+        { $set:{ description }},
         { returnDocument: "after" }
       );
       
