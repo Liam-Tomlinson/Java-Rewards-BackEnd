@@ -34,8 +34,8 @@ router.get("/", getUsers);
 // });
 router.post("/", postUser);
 router.get("/email", getUserByEmail);
-router.patch("/coffee", patchUserCoffee);
 router.delete("/email", deleteUserByEmail);
 router.patch("/email", patchUserByEmail);
+router.patch("/coffee", patchUserCoffee);
 
 export { router };

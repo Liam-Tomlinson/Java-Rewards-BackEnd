@@ -208,8 +208,8 @@ describe("PATCH /users/email", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("Post /shops/menu", () => {
-  test("should post a shops menu", async () => {
+describe("PATCH /shops/menu", () => {
+  test("should update a shops menu", async () => {
     const menuBody = {
       email: "northernroast@example.com",
       menu: [

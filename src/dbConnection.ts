@@ -1,6 +1,6 @@
 import { MongoClient,ServerApiVersion } from "mongodb";
 import * as dotenv from "dotenv";
-dotenv.config(); // Load environment variables from .env file
+dotenv.config();
 
 const status: any = process.env.STATUS;
 let uri: any

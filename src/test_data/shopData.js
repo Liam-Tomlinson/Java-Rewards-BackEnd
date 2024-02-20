@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.shopData = void 0;
 exports.shopData = [
     {
-        shop_id: 1,
+        _id: 1,
         name: "Mancunian Brew",
         email: "mancunianbrew@example.com",
         avatar_url: "http://example.com/mancunian_brew_avatar.jpg",
@@ -43,7 +43,7 @@ exports.shopData = [
         },
     },
     {
-        shop_id: 2,
+        _id: 2,
         name: "Northern Roast",
         email: "northernroast@example.com",
         avatar_url: "http://example.com/northern_roast_avatar.jpg",
@@ -83,7 +83,7 @@ exports.shopData = [
         },
     },
     {
-        shop_id: 3,
+        _id: 3,
         name: "City Grind",
         email: "citygrind@example.com",
         avatar_url: "http://example.com/city_grind_avatar.jpg",
@@ -123,7 +123,7 @@ exports.shopData = [
         },
     },
     {
-        shop_id: 4,
+        _id: 4,
         name: "Manchester Mugs",
         email: "manchestermugs@example.com",
         avatar_url: "http://example.com/manchester_mugs_avatar.jpg",
