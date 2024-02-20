@@ -36,22 +36,44 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.connectDatabase = exports.client = void 0;
+exports.connectDatabase = void 0;
 var mongodb_1 = require("mongodb");
-exports.client = new mongodb_1.MongoClient("mongodb://localhost:27017/javarewards_test");
+var dotenv_1 = require("dotenv");
+dotenv_1.default.config(); // Load environment variables from .env file
+var STATUS = process.env.STATUS || "development";
+var client;
+console.log(STATUS, "DBDBD");
+if (STATUS === "development") {
+    client = new mongodb_1.MongoClient("mongodb://localhost:27017/javarewards_test");
+}
+else {
+    console.log("hello");
+}
+// let client
+var username = encodeURIComponent("alexis");
+var password = encodeURIComponent("uR5wjAEPWE0LddGL");
+var uri = "mongodb+srv://".concat(username, ":").concat(password, "@javarewards.555wnsg.mongodb.net/?retryWrites=true&w=majority");
+// if(production)const newClient = new MongoClient(uri, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   },
+// });
+// export const client = new MongoClient("http://192.168.100.47:5050/shops");
 var connectDatabase = function () { return __awaiter(void 0, void 0, void 0, function () {
     var error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, exports.client.connect()];
+                return [4 /*yield*/, client.connect()];
             case 1:
                 _a.sent();
-                return [2 /*return*/, exports.client.db()];
+                return [2 /*return*/, client.db()];
             case 2:
                 error_1 = _a.sent();
-                console.error('Could not connect to the database', error_1);
+                console.error("Could not connect to the database", error_1);
                 process.exit(1);
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/];
