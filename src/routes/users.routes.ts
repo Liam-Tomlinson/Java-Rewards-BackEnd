@@ -1,7 +1,13 @@
 import { Router, Request, Response } from "express";
 import { MongoClient, Db, ObjectId } from "mongodb";
 import { connectDatabase, client } from "../dbConnection";
-import { getUserByEmail, getUsers, patchUserCoffee, postUser } from "../controllers/users-controllers";
+import {
+  getUserByEmail,
+  getUsers,
+  patchUserCoffee,
+  postUser,
+  deleteUserByEmail,
+} from "../controllers/users-controllers";
 const router = Router();
 let db: Db;
 
@@ -19,14 +25,15 @@ router.get("/", getUsers);
 //       .toArray();
 //     res.status(200).send({ user });
 //   } catch (err) {
-    
+
 //     res
 //       .status(500)
 //       .send({ message: "An error occurred while fetching a user by id." });
 //   }
 // });
 router.post("/", postUser);
-router.get("/email",getUserByEmail)
+router.get("/email", getUserByEmail);
 router.patch("/coffee", patchUserCoffee);
+router.delete("/email", deleteUserByEmail);
 
 export { router };

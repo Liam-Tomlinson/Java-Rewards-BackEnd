@@ -70,3 +70,14 @@ export const fetchUserByEmail = async (email: User) => {
     return user;
   }
 };
+export const removeUserByEmail = async (email: User) => {
+  const user = await db.collection("Users").deleteOne({ email: email });
+  if (user.deletedCount === 0) {
+    return Promise.reject({
+      status: 404,
+      msg: "email not found",
+    });
+  } else {
+    return user;
+  }
+};

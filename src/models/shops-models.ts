@@ -18,6 +18,7 @@ interface Shop extends Object {
   lat?: number;
   long?: number;
   description?: string;
+  location?: object;
 }
 export const insertShop = async (shop: Shop) => {
   try {
@@ -62,21 +63,26 @@ export const fetchShopsByEmail = async (email: Shop) => {
 
 export const removeShopsByEmail = async (email: Shop) => {
   const shop = await db.collection("CoffeeShops").deleteOne({ email: email });
-
-  return shop;
+  if (shop.deletedCount === 0) {
+    return Promise.reject({
+      status: 404,
+      msg: "email not found",
+    });
+  } else {
+    return shop;
+  }
 };
 export const updateShopByEmail = async (shop: Shop) => {
-    const {email,description} = shop
+  const { email, description, avatar_url, location } = shop;
   try {
     let updatedShop = await db
       .collection("CoffeeShops")
       .findOneAndUpdate(
         { email },
-        { $set:{ description }},
+        { $set: { description, avatar_url, location } },
         { returnDocument: "after" }
       );
-      
-      
+
     if (updatedShop === null) {
       return Promise.reject({
         status: 404,
