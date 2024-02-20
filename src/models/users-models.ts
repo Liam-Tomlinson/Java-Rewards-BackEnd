@@ -18,28 +18,38 @@ interface User extends Object {
   avatar_url?: string,
 }
 export const insertUser = async (user: User) => {
-  try{
-  const newUser = await db.collection("Users").insertOne({
-    name: user.name,
-    age: user.age,
-    email: user.email,
-    avatar_url: user.avatar_url,
-    coffee_count: 0,
-  });
- 
-  return newUser;
-}
-catch(error){ throw error}
+  try {
+    const newUser = await db.collection("Users").insertOne({
+      name: user.name,
+      age: user.age,
+      email: user.email,
+      avatar_url: user.avatar_url,
+      coffee_count: 0,
+    });
+    let data: any = {};
+
+    if (newUser.acknowledged) {
+
+      data = await db
+        .collection("Users")
+        .findOne({ _id: newUser.insertedId });
+
+    }
+
+    return data;
+
+  }
+  catch (error) { throw error }
 };
 
 export const updateCoffebyUserEmail = async (email: User) => {
-  try{
+  try {
     let updatedUser = await db.collection('Users').findOneAndUpdate(
       { email: email },
       { $inc: { "coffee_count": 1 } },
       { returnDocument: 'after' }
     );
     return updatedUser
-}
-catch(error){ throw error}
+  }
+  catch (error) { throw error }
 };

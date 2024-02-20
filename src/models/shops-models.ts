@@ -34,11 +34,11 @@ export const insertShop = async (shop: Shop) => {
     let data: any = {};
 
     if (newShop.acknowledged) {
-      // ... prepare the data
+     
       data = await db
         .collection("CoffeeShops")
         .findOne({ _id: newShop.insertedId });
-      console.log(data, "line 42");
+     
     }
 
     return data;
