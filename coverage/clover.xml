@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1708439623674" clover="3.2.0">
-  <project timestamp="1708439623674" name="All files">
-    <metrics statements="317" coveredstatements="295" conditionals="175" coveredconditionals="107" methods="86" coveredmethods="80" elements="578" coveredelements="482" complexity="0" loc="317" ncloc="317" packages="5" files="12" classes="12"/>
+<coverage generated="1708452549782" clover="3.2.0">
+  <project timestamp="1708452549782" name="All files">
+    <metrics statements="321" coveredstatements="299" conditionals="175" coveredconditionals="107" methods="86" coveredmethods="80" elements="582" coveredelements="486" complexity="0" loc="321" ncloc="321" packages="5" files="12" classes="12"/>
     <package name="src">
-      <metrics statements="119" coveredstatements="103" conditionals="157" coveredconditionals="89" methods="34" coveredmethods="28"/>
-      <file name="app.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/app.ts">
+      <metrics statements="123" coveredstatements="107" conditionals="157" coveredconditionals="89" methods="34" coveredmethods="28"/>
+      <file name="app.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/app.ts">
         <metrics statements="16" coveredstatements="16" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -23,8 +23,8 @@
         <line num="27" count="4" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
       </file>
-      <file name="dbConnection.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/dbConnection.js">
-        <metrics statements="46" coveredstatements="38" conditionals="76" coveredconditionals="46" methods="16" coveredmethods="13"/>
+      <file name="dbConnection.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/dbConnection.js">
+        <metrics statements="50" coveredstatements="42" conditionals="76" coveredconditionals="46" methods="16" coveredmethods="13"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
         <line num="3" count="6" type="cond" truecount="1" falsecount="1"/>
         <line num="4" count="6" type="cond" truecount="2" falsecount="0"/>
@@ -58,21 +58,25 @@
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
-        <line num="42" count="6" type="stmt"/>
-        <line num="44" count="6" type="stmt"/>
-        <line num="45" count="12" type="cond" truecount="2" falsecount="2"/>
-        <line num="47" count="6" type="stmt"/>
-        <line num="48" count="6" type="stmt"/>
-        <line num="50" count="6" type="stmt"/>
-        <line num="51" count="6" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="52" count="6" type="stmt"/>
+        <line num="54" count="6" type="stmt"/>
+        <line num="55" count="12" type="cond" truecount="2" falsecount="2"/>
+        <line num="57" count="6" type="stmt"/>
+        <line num="58" count="6" type="stmt"/>
+        <line num="60" count="6" type="stmt"/>
+        <line num="61" count="6" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
       </file>
-      <file name="seed.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/seed.js">
+      <file name="seed.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/seed.js">
         <metrics statements="57" coveredstatements="49" conditionals="78" coveredconditionals="40" methods="16" coveredmethods="13"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
         <line num="3" count="5" type="cond" truecount="1" falsecount="1"/>
@@ -135,7 +139,7 @@
     </package>
     <package name="src.controllers">
       <metrics statements="84" coveredstatements="82" conditionals="0" coveredconditionals="0" methods="24" coveredmethods="24"/>
-      <file name="shops-controllers.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/controllers/shops-controllers.ts">
+      <file name="shops-controllers.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/controllers/shops-controllers.ts">
         <metrics statements="42" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
         <line num="2" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
@@ -180,7 +184,7 @@
         <line num="87" count="1" type="stmt"/>
         <line num="89" count="1" type="stmt"/>
       </file>
-      <file name="users-controllers.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/controllers/users-controllers.ts">
+      <file name="users-controllers.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/controllers/users-controllers.ts">
         <metrics statements="42" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
         <line num="2" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
@@ -228,7 +232,7 @@
     </package>
     <package name="src.models">
       <metrics statements="79" coveredstatements="75" conditionals="18" coveredconditionals="18" methods="26" coveredmethods="26"/>
-      <file name="shops-models.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/models/shops-models.ts">
+      <file name="shops-models.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/models/shops-models.ts">
         <metrics statements="40" coveredstatements="38" conditionals="9" coveredconditionals="9" methods="13" coveredmethods="13"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -271,7 +275,7 @@
         <line num="118" count="1" type="stmt"/>
         <line num="121" count="0" type="stmt"/>
       </file>
-      <file name="users-models.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/models/users-models.ts">
+      <file name="users-models.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/models/users-models.ts">
         <metrics statements="39" coveredstatements="37" conditionals="9" coveredconditionals="9" methods="13" coveredmethods="13"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -316,7 +320,7 @@
     </package>
     <package name="src.routes">
       <metrics statements="26" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="shops.routes.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/routes/shops.routes.ts">
+      <file name="shops.routes.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/routes/shops.routes.ts">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -332,7 +336,7 @@
         <line num="24" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
       </file>
-      <file name="users.routes.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/routes/users.routes.ts">
+      <file name="users.routes.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/routes/users.routes.ts">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -351,19 +355,19 @@
     </package>
     <package name="src.test_data">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="ordersData.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/test_data/ordersData.js">
+      <file name="ordersData.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/test_data/ordersData.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="shopData.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/test_data/shopData.js">
+      <file name="shopData.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/test_data/shopData.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="userData.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/test_data/userData.js">
+      <file name="userData.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/test_data/userData.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>

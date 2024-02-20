@@ -1,5 +1,7 @@
 # Java-Rewards-BackEnd
 
+$ sudo systemctl start mongod 
+
 ### npm run dev - start the server
 ### npm run seed - seed Database
 

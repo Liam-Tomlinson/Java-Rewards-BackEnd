@@ -40,9 +40,21 @@ exports.connectDatabase = exports.client = void 0;
 var mongodb_1 = require("mongodb");
 var dotenv = require("dotenv");
 dotenv.config(); // Load environment variables from .env file
-var STATUS = process.env.STATUS;
-console.log(STATUS);
-exports.client = new mongodb_1.MongoClient("mongodb://localhost:27017/javarewards_test");
+var status = process.env.STATUS;
+var uri;
+if (status === "production") {
+    uri = process.env.MONGO_PRODUCTION;
+}
+else {
+    uri = process.env.MONGO;
+}
+exports.client = new mongodb_1.MongoClient(uri, {
+    serverApi: {
+        version: mongodb_1.ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
+});
 var connectDatabase = function () { return __awaiter(void 0, void 0, void 0, function () {
     var error_1;
     return __generator(this, function (_a) {
@@ -52,7 +64,7 @@ var connectDatabase = function () { return __awaiter(void 0, void 0, void 0, fun
                 return [4 /*yield*/, exports.client.connect()];
             case 1:
                 _a.sent();
-                return [2 /*return*/, exports.client.db()];
+                return [2 /*return*/, exports.client.db("JavaRewards")];
             case 2:
                 error_1 = _a.sent();
                 console.error("Could not connect to the database", error_1);
