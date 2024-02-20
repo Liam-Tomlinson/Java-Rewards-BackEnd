@@ -102,7 +102,7 @@ describe("POST /shops", () => {
     expect(res.status).toBe(400);
   });
 });
-describe("PATCH users/coffee", () => {
+describe("PATCH /users/coffee", () => {
   test("should increase coffee count and 201 status", async () => {
     const userBody = {
       email: "jane@example.com",
@@ -119,7 +119,7 @@ describe("PATCH users/coffee", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("GET users/email", () => {
+describe("GET /users/email", () => {
   test("should return user by given email", async () => {
     const email = { email: "emily@example.com" };
     const res = await request(app).get("/users/email").send(email);
@@ -145,7 +145,6 @@ describe("GET /shops/email", () => {
     expect(res.status).toBe(404);
   });
 });
-
 describe("DELETE /shops/email", () => {
   test("should delete shop by email", async () => {
     const email = { email: "citygrind@example.com" };
