@@ -38,6 +38,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDatabase = exports.client = void 0;
 var mongodb_1 = require("mongodb");
+var dotenv = require("dotenv");
+dotenv.config(); // Load environment variables from .env file
+var STATUS = process.env.STATUS;
+console.log(STATUS);
 exports.client = new mongodb_1.MongoClient("mongodb://localhost:27017/javarewards_test");
 var connectDatabase = function () { return __awaiter(void 0, void 0, void 0, function () {
     var error_1;
