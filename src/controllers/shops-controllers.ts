@@ -5,6 +5,7 @@ import {
   fetchShopsByEmail,
   removeShopsByEmail,
   updateShopByEmail,
+  updateMenuByEmail,
 } from "../models/shops-models";
 
 export const getShops = async (
@@ -70,6 +71,20 @@ export const patchShopByEmail = async (
     const shop = await updateShopByEmail(upShop);
 
     res.status(201).send({ shop });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const patchMenuByEmail = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const upMenu = req.body;
+    const menu = await updateMenuByEmail(upMenu);
+    res.status(200).send(menu.menu);
   } catch (error) {
     next(error);
   }

@@ -5,6 +5,7 @@ import {
   insertUser,
   updateCoffebyUserEmail,
   removeUserByEmail,
+  updateUserByEmail,
 } from "../models/users-models";
 
 export const getUsers = async (
@@ -70,6 +71,21 @@ export const deleteUserByEmail = async (
     const email = req.body.email;
     const removed = await removeUserByEmail(email);
     res.status(204).send({ msg: "Shop Removed" });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const patchUserByEmail = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const upUser = req.body;
+    const user = await updateUserByEmail(upUser);
+
+    res.status(201).send({ user });
   } catch (error) {
     next(error);
   }

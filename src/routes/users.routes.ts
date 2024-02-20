@@ -7,6 +7,7 @@ import {
   patchUserCoffee,
   postUser,
   deleteUserByEmail,
+  patchUserByEmail,
 } from "../controllers/users-controllers";
 const router = Router();
 let db: Db;
@@ -35,5 +36,6 @@ router.post("/", postUser);
 router.get("/email", getUserByEmail);
 router.patch("/coffee", patchUserCoffee);
 router.delete("/email", deleteUserByEmail);
+router.patch("/email", patchUserByEmail);
 
 export { router };

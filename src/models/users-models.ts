@@ -81,3 +81,26 @@ export const removeUserByEmail = async (email: User) => {
     return user;
   }
 };
+export const updateUserByEmail = async (user: User) => {
+  const { email, avatar_url, name } = user;
+  try {
+    let updatedUser = await db
+      .collection("Users")
+      .findOneAndUpdate(
+        { email },
+        { $set: { avatar_url, name } },
+        { returnDocument: "after" }
+      );
+
+    if (updatedUser === null) {
+      return Promise.reject({
+        status: 404,
+        msg: "User not found",
+      });
+    } else {
+      return updatedUser;
+    }
+  } catch (error) {
+    throw error;
+  }
+};

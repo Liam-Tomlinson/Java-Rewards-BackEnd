@@ -3,6 +3,7 @@ import { connectDatabase, client } from "../src/dbConnection";
 import app from "../src/app";
 import { populateTestData } from "../src/seed";
 import { Db } from "mongodb";
+import Test from "supertest/lib/test";
 let db: Db;
 beforeAll(async () => {
   db = await connectDatabase();
@@ -168,10 +169,13 @@ describe("PATCH /shops/email", () => {
       },
       description: "A family ran coffee shop with a view",
     };
-
     const res = await request(app).patch("/shops/email").send(shopBody);
-
     expect(res.status).toBe(201);
+  });
+  test("should return error if email not found", async () => {
+    const email = { email: "kas@example.com" };
+    const res = await request(app).patch("/shops/email").send(email);
+    expect(res.status).toBe(404);
   });
 });
 describe("DELETE users/email", () => {
@@ -183,6 +187,47 @@ describe("DELETE users/email", () => {
   test("should return error if email not found", async () => {
     const email = { email: "kas@example.com" };
     const res = await request(app).delete("/users/email").send(email);
+    expect(res.status).toBe(404);
+  });
+});
+describe("PATCH /users/email", () => {
+  test("should update user profile", async () => {
+    const userBody = {
+      name: "Emily Davis",
+      age: 35,
+      email: "emily@example.com",
+      avatar_url: "http://example.com/avatar4.jpg",
+    };
+    const res = await request(app).patch("/users/email").send(userBody);
+
+    expect(res.status).toBe(201);
+  });
+  test("should return error if email not found", async () => {
+    const email = { email: "kas@example.com" };
+    const res = await request(app).patch("/users/email").send(email);
+    expect(res.status).toBe(404);
+  });
+});
+describe("Post /shops/menu", () => {
+  test("should post a shops menu", async () => {
+    const menuBody = {
+      email: "northernroast@example.com",
+      menu: [
+        {
+          item: "White hot chocolate",
+          cost: 4,
+          description: "Rich and smooth brewed chocolate.",
+          item_img: "http://example.com/filter_coffee.jpg",
+        },
+      ],
+    };
+    const res = await request(app).patch("/shops/menu").send(menuBody);
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveLength(1);
+  });
+  test("should return error if email not found", async () => {
+    const email = { email: "kas@example.com" };
+    const res = await request(app).patch("/shops/menu").send(email);
     expect(res.status).toBe(404);
   });
 });

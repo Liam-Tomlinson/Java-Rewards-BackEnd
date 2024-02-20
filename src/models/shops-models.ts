@@ -19,6 +19,7 @@ interface Shop extends Object {
   long?: number;
   description?: string;
   location?: object;
+  menu: object;
 }
 export const insertShop = async (shop: Shop) => {
   try {
@@ -80,6 +81,31 @@ export const updateShopByEmail = async (shop: Shop) => {
       .findOneAndUpdate(
         { email },
         { $set: { description, avatar_url, location } },
+        { returnDocument: "after" }
+      );
+
+    if (updatedShop === null) {
+      return Promise.reject({
+        status: 404,
+        msg: "Shop not found",
+      });
+    } else {
+      return updatedShop;
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const updateMenuByEmail = async (shop: Shop) => {
+  const { email, menu } = shop;
+
+  try {
+    let updatedShop = await db
+      .collection("CoffeeShops")
+      .findOneAndUpdate(
+        { email },
+        { $set: { menu } },
         { returnDocument: "after" }
       );
 
