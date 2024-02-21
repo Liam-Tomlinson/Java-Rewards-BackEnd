@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1708516993136" clover="3.2.0">
-  <project timestamp="1708516993136" name="All files">
-    <metrics statements="397" coveredstatements="366" conditionals="199" coveredconditionals="122" methods="100" coveredmethods="94" elements="696" coveredelements="582" complexity="0" loc="397" ncloc="397" packages="5" files="15" classes="15"/>
+<coverage generated="1708528066323" clover="3.2.0">
+  <project timestamp="1708528066323" name="All files">
+    <metrics statements="412" coveredstatements="209" conditionals="199" coveredconditionals="87" methods="105" coveredmethods="37" elements="716" coveredelements="333" complexity="0" loc="412" ncloc="412" packages="5" files="15" classes="15"/>
     <package name="src">
-      <metrics statements="131" coveredstatements="114" conditionals="160" coveredconditionals="91" methods="34" coveredmethods="28"/>
-      <file name="app.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/app.ts">
-        <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <metrics statements="131" coveredstatements="106" conditionals="160" coveredconditionals="87" methods="34" coveredmethods="26"/>
+      <file name="app.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/app.ts">
+        <metrics statements="20" coveredstatements="12" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -16,18 +16,18 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
-        <line num="23" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="26" count="16" type="cond" truecount="1" falsecount="0"/>
-        <line num="27" count="11" type="stmt"/>
-        <line num="29" count="16" type="cond" truecount="2" falsecount="0"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="34" count="15" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
       </file>
-      <file name="dbConnection.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/dbConnection.js">
+      <file name="dbConnection.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/dbConnection.js">
         <metrics statements="54" coveredstatements="45" conditionals="78" coveredconditionals="47" methods="16" coveredmethods="13"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
         <line num="3" count="8" type="cond" truecount="1" falsecount="1"/>
@@ -84,7 +84,7 @@
         <line num="75" count="0" type="stmt"/>
         <line num="79" count="1" type="stmt"/>
       </file>
-      <file name="seed.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/seed.js">
+      <file name="seed.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/seed.js">
         <metrics statements="57" coveredstatements="49" conditionals="78" coveredconditionals="40" methods="16" coveredmethods="13"/>
         <line num="2" count="1" type="cond" truecount="3" falsecount="0"/>
         <line num="3" count="5" type="cond" truecount="1" falsecount="1"/>
@@ -146,253 +146,267 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="105" coveredstatements="101" conditionals="6" coveredconditionals="3" methods="30" coveredmethods="30"/>
-      <file name="orders-controllers.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/controllers/orders-controllers.ts">
-        <metrics statements="21" coveredstatements="19" conditionals="6" coveredconditionals="3" methods="6" coveredmethods="6"/>
+      <metrics statements="111" coveredstatements="23" conditionals="6" coveredconditionals="0" methods="32" coveredmethods="2"/>
+      <file name="orders-controllers.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/controllers/orders-controllers.ts">
+        <metrics statements="21" coveredstatements="4" conditionals="6" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="6" count="3" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
-        <line num="36" count="2" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
       </file>
-      <file name="shops-controllers.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/controllers/shops-controllers.ts">
-        <metrics statements="42" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
+      <file name="shops-controllers.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/controllers/shops-controllers.ts">
+        <metrics statements="48" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="2"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="57" count="2" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="64" count="1" type="stmt"/>
-        <line num="68" count="2" type="stmt"/>
-        <line num="69" count="2" type="stmt"/>
-        <line num="70" count="2" type="stmt"/>
-        <line num="71" count="2" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
-        <line num="79" count="1" type="stmt"/>
-        <line num="83" count="2" type="stmt"/>
-        <line num="84" count="2" type="stmt"/>
-        <line num="85" count="2" type="stmt"/>
-        <line num="86" count="2" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
-      </file>
-      <file name="users-controllers.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/controllers/users-controllers.ts">
-        <metrics statements="42" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="3" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="37" count="1" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="2" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="55" count="2" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
-        <line num="57" count="2" type="stmt"/>
-        <line num="59" count="2" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="69" count="2" type="stmt"/>
-        <line num="70" count="2" type="stmt"/>
-        <line num="71" count="2" type="stmt"/>
-        <line num="72" count="2" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+      </file>
+      <file name="users-controllers.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/controllers/users-controllers.ts">
+        <metrics statements="42" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="0"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
         <line num="79" count="1" type="stmt"/>
-        <line num="83" count="2" type="stmt"/>
-        <line num="84" count="2" type="stmt"/>
-        <line num="85" count="2" type="stmt"/>
-        <line num="86" count="2" type="stmt"/>
-        <line num="88" count="1" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.models">
-      <metrics statements="116" coveredstatements="106" conditionals="33" coveredconditionals="28" methods="33" coveredmethods="33"/>
-      <file name="orders-models.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/models/orders-models.ts">
-        <metrics statements="37" coveredstatements="31" conditionals="15" coveredconditionals="10" methods="7" coveredmethods="7"/>
+      <metrics statements="124" coveredstatements="34" conditionals="33" coveredconditionals="0" methods="36" coveredmethods="6"/>
+      <file name="orders-models.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/models/orders-models.ts">
+        <metrics statements="38" coveredstatements="9" conditionals="15" coveredconditionals="0" methods="7" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="28" count="3" type="stmt"/>
-        <line num="29" count="3" type="stmt"/>
-        <line num="30" count="3" type="cond" truecount="6" falsecount="0"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
-        <line num="37" count="2" type="cond" truecount="3" falsecount="0"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="6"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="66" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="68" count="1" type="stmt"/>
-        <line num="70" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="74" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="78" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="82" count="1" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
-        <line num="86" count="2" type="stmt"/>
-        <line num="87" count="2" type="stmt"/>
-        <line num="88" count="2" type="stmt"/>
-        <line num="89" count="2" type="stmt"/>
-        <line num="95" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="96" count="2" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="69" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="77" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="95" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="96" count="0" type="stmt"/>
         <line num="101" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
       </file>
-      <file name="shops-models.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/models/shops-models.ts">
-        <metrics statements="40" coveredstatements="38" conditionals="9" coveredconditionals="9" methods="13" coveredmethods="13"/>
+      <file name="shops-models.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/models/shops-models.ts">
+        <metrics statements="47" coveredstatements="16" conditionals="9" coveredconditionals="0" methods="16" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
-        <line num="25" count="3" type="stmt"/>
-        <line num="26" count="3" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="38" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="39" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="50" count="2" type="stmt"/>
-        <line num="51" count="2" type="stmt"/>
-        <line num="55" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="65" count="2" type="stmt"/>
-        <line num="66" count="2" type="stmt"/>
-        <line num="67" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="68" count="1" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
-        <line num="76" count="2" type="stmt"/>
-        <line num="77" count="2" type="stmt"/>
-        <line num="78" count="2" type="stmt"/>
-        <line num="79" count="2" type="stmt"/>
-        <line num="87" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="88" count="1" type="stmt"/>
-        <line num="93" count="1" type="stmt"/>
-        <line num="96" count="0" type="stmt"/>
-        <line num="100" count="2" type="stmt"/>
-        <line num="101" count="2" type="stmt"/>
-        <line num="103" count="2" type="stmt"/>
-        <line num="104" count="2" type="stmt"/>
-        <line num="112" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="113" count="1" type="stmt"/>
-        <line num="118" count="1" type="stmt"/>
-        <line num="121" count="0" type="stmt"/>
-      </file>
-      <file name="users-models.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/models/users-models.ts">
-        <metrics statements="39" coveredstatements="37" conditionals="9" coveredconditionals="9" methods="13" coveredmethods="13"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="31" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="37" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="50" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="62" count="2" type="stmt"/>
-        <line num="63" count="2" type="stmt"/>
-        <line num="64" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="70" count="1" type="stmt"/>
-        <line num="73" count="2" type="stmt"/>
-        <line num="74" count="2" type="stmt"/>
-        <line num="75" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
-        <line num="81" count="1" type="stmt"/>
-        <line num="84" count="2" type="stmt"/>
-        <line num="85" count="2" type="stmt"/>
-        <line num="86" count="2" type="stmt"/>
-        <line num="87" count="2" type="stmt"/>
-        <line num="95" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="96" count="1" type="stmt"/>
-        <line num="101" count="1" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="87" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="112" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="113" count="0" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="125" count="1" type="stmt"/>
+        <line num="126" count="1" type="stmt"/>
+        <line num="127" count="4" type="stmt"/>
+        <line num="129" count="4" type="stmt"/>
+        <line num="136" count="4" type="stmt"/>
+        <line num="139" count="1" type="stmt"/>
+      </file>
+      <file name="users-models.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/models/users-models.ts">
+        <metrics statements="39" coveredstatements="9" conditionals="9" coveredconditionals="0" methods="13" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="75" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="95" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.routes">
-      <metrics statements="36" coveredstatements="36" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="orders.routes.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/routes/orders.routes.ts">
+      <metrics statements="37" coveredstatements="37" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="orders.routes.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/routes/orders.routes.ts">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -405,23 +419,24 @@
         <line num="15" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
       </file>
-      <file name="shops.routes.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/routes/shops.routes.ts">
-        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="shops.routes.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/routes/shops.routes.ts">
+        <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
-      <file name="users.routes.ts" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/routes/users.routes.ts">
+      <file name="users.routes.ts" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/routes/users.routes.ts">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -440,19 +455,19 @@
     </package>
     <package name="src.test_data">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="ordersData.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/test_data/ordersData.js">
+      <file name="ordersData.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/test_data/ordersData.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="shopData.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/test_data/shopData.js">
+      <file name="shopData.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/test_data/shopData.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
       </file>
-      <file name="userData.js" path="/home/alexis/Java-Working/Java-Rewards-BackEnd/src/test_data/userData.js">
+      <file name="userData.js" path="/Users/kaswarashabuo/northcoders/Java-Rewards-BackEnd/src/test_data/userData.js">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>

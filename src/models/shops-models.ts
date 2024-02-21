@@ -121,3 +121,20 @@ export const updateMenuByEmail = async (shop: Shop) => {
     throw error;
   }
 };
+export const fetchOffers = async () => {
+  const shops = await db.collection("CoffeeShops").find({}).toArray();
+  const offers = shops.map((shop) => {
+    console.log(shop,"shop");
+    
+    const offer = {
+      name: shop.name,
+      img: shop.offers.img,
+      description: shop.offers.description,
+      date: shop.offers.date,
+    };
+
+    return offer;
+  });
+
+  return offers;
+};

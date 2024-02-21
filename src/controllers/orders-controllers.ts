@@ -38,7 +38,7 @@ export const patchOrderById = async (
     const orderId = req.body;
     const order = await updateOrderById(orderId);
 
-    res.status(201).send({ order });
+    res.status(200).send({ order });
   } catch (error) {
     next(error);
   }

@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDatabase = exports.client = void 0;
 var mongodb_1 = require("mongodb");
 var dotenv = require("dotenv");
-dotenv.config(); // Load environment variables from .env file
+dotenv.config();
 var status = process.env.STATUS;
 var uri;
 if (status === "production") {

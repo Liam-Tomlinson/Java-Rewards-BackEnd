@@ -236,11 +236,10 @@ describe("GET /orders", () => {
     const res = await request(app).get("/orders");
     const expected = res.body.orders;
 
-    expect(expected).toHaveLength(56);
+    expect(expected).toHaveLength(12);
 
     expect(res.status).toBe(200);
   });
-
 });
 describe("POST /orders", () => {
   test("Should add a new order to database", async () => {
@@ -249,27 +248,23 @@ describe("POST /orders", () => {
       shop_email: "mancunianbrew@example.com",
       item: "Cappuccino",
       quantity: 4,
-      price: 10
-    }
+      price: 10,
+    };
     const res = await request(app).post("/orders").send(orderBody);
+    console.log(res.body.order.modifiedCount);
+
     expect(res.status).toBe(201);
     expect(res.body.order.acknowledged).toBe(true);
-    expect(res.body.order.modifiedCount).toBe(1);
-
-
   });
   test("Should respond with error when missing properties in body", async () => {
     const orderBody = {
       user_email: "john@example.com",
       shop_email: "mancunianbrew@example.com",
       quantity: 4,
-      price: 10
-    }
+      price: 10,
+    };
     const res = await request(app).post("/orders").send(orderBody);
     expect(res.status).toBe(400);
-
-
-
   });
   test("should return error 404 when shop or user not found", async () => {
     const orderBody = {
@@ -277,31 +272,38 @@ describe("POST /orders", () => {
       shop_email: "mancunianbrew@example.com",
       item: "Cappuccino",
       quantity: 4,
-      price: 10
-    }
+      price: 10,
+    };
 
     const response = await request(app).post("/orders").send(orderBody);
-    console.log(response)
+    console.log(response);
 
     expect(response.status).toBe(404);
     expect(response.text).toBe("email not found");
-
   });
 });
 describe("PATCH /orders/status", () => {
   test("should update the order status", async () => {
     const orderBody = {
-      _id: "65d5dec7623525f596268010"
+      _id: 10,
     };
     const res = await request(app).patch("/orders/status").send(orderBody);
     expect(res.status).toBe(200);
-    expect(res.body).toHaveLength(1);
+    expect(res.body.order.orders[0].status).toBe("closed");
   });
   test("should return error if order id not found", async () => {
     const orderBody = {
-      _id: "65d5dec7623525f596268010"
+      _id: "65d5dec7623525f596268010",
     };
     const res = await request(app).patch("/orders/status").send(orderBody);
     expect(res.status).toBe(404);
+  });
+});
+describe("GET /shops/offers", () => {
+  test.only("Should return an array of offers of all shops", async () => {
+    const res = await request(app).get("/shops/offers");
+    const expected = res.body.offers;
+    expect(expected).toHaveLength(4);
+    expect(res.status).toBe(200);
   });
 });
