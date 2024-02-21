@@ -231,3 +231,14 @@ describe("PATCH /shops/menu", () => {
     expect(res.status).toBe(404);
   });
 });
+describe("GET /orders", () => {
+  test("Should return an array of all orders", async () => {
+    const res = await request(app).get("/orders");
+    const expected = res.body.orders;
+
+    expect(expected).toHaveLength(56);
+
+    expect(res.status).toBe(200);
+  });
+  
+});
