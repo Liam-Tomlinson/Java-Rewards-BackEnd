@@ -242,3 +242,36 @@ describe("GET /orders", () => {
   });
   
 });
+describe("POST /orders", () => {
+  test("Should add a new order to database", async () => {
+    const orderBody = {
+      user_email:"john@example.com",
+      shop_email:"mancunianbrew@example.com",
+      item:"Cappuccino",
+      quantity:4,
+      price:10
+      }
+    const res = await request(app).post("/orders").send(orderBody);
+    expect(res.status).toBe(201);
+    expect(res.body.order.acknowledged).toBe(true);
+    expect(res.body.order.modifiedCount).toBe(1);
+   
+
+  });
+  test("should return error 404 when shop or user not found", async () => {
+    const orderBody = {
+      user_email:"NOT_FOUND@example.com",
+      shop_email:"mancunianbrew@example.com",
+      item:"Cappuccino",
+      quantity:4,
+      price:10
+      }
+
+    const response = await request(app).post("/orders").send(orderBody);
+    console.log(response)
+
+    expect(response.status).toBe(404);
+    expect(response.text).toBe("email not found");
+    
+  });
+});
