@@ -33,7 +33,7 @@ router.get("/", getUsers);
 //   }
 // });
 router.post("/", postUser);
-router.get("/email", getUserByEmail);
+router.post("/email", getUserByEmail);
 router.delete("/email", deleteUserByEmail);
 router.patch("/email", patchUserByEmail);
 router.patch("/coffee", patchUserCoffee);

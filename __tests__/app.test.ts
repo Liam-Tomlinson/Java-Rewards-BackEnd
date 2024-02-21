@@ -120,16 +120,16 @@ describe("PATCH /users/coffee", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("GET /users/email", () => {
+describe("POST /users/email", () => {
   test("should return user by given email", async () => {
     const email = { email: "emily@example.com" };
-    const res = await request(app).get("/users/email").send(email);
+    const res = await request(app).post("/users/email").send(email);
     expect(res.status).toBe(200);
     expect(typeof res.body.user[0].email).toBe("string");
   });
   test("should return 404 if email does not exist", async () => {
     const email = { email: "alexis@example.com" };
-    const res = await request(app).get("/users/email").send(email);
+    const res = await request(app).post("/users/email").send(email);
     expect(res.status).toBe(404);
   });
 });
