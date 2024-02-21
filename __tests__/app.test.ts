@@ -8,9 +8,9 @@ let db: Db;
 beforeAll(async () => {
   db = await connectDatabase();
 });
-/* beforeEach(()=>{
+beforeEach(()=>{
   return populateTestData()
-}) */
+})
 afterAll(async () => {
   await populateTestData();
   await client.close();
@@ -236,8 +236,16 @@ describe("GET /orders", () => {
     const res = await request(app).get("/orders");
     const expected = res.body.orders;
 
-    expect(expected).toHaveLength(12);
+    expect(expected).toHaveLength(35);
 
+    expect(res.status).toBe(200);
+  });
+});
+describe("GET /shops/offers", () => {
+  test("Should return an array of offers of all shops", async () => {
+    const res = await request(app).get("/shops/offers");
+    const expected = res.body.offers;
+    expect(expected).toHaveLength(4);
     expect(res.status).toBe(200);
   });
 });
@@ -251,8 +259,7 @@ describe("POST /orders", () => {
       price: 10,
     };
     const res = await request(app).post("/orders").send(orderBody);
-    console.log(res.body.order.modifiedCount);
-
+  
     expect(res.status).toBe(201);
     expect(res.body.order.acknowledged).toBe(true);
   });
@@ -276,8 +283,7 @@ describe("POST /orders", () => {
     };
 
     const response = await request(app).post("/orders").send(orderBody);
-    console.log(response);
-
+   
     expect(response.status).toBe(404);
     expect(response.text).toBe("email not found");
   });
@@ -299,11 +305,4 @@ describe("PATCH /orders/status", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("GET /shops/offers", () => {
-  test.only("Should return an array of offers of all shops", async () => {
-    const res = await request(app).get("/shops/offers");
-    const expected = res.body.offers;
-    expect(expected).toHaveLength(4);
-    expect(res.status).toBe(200);
-  });
-});
+
