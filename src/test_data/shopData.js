@@ -6,7 +6,7 @@ exports.shopData = [
         _id: 1,
         name: "Mancunian Brew",
         email: "mancunianbrew@example.com",
-        avatar_url: "http://example.com/mancunian_brew_avatar.jpg",
+        avatar_url: "https://www.coffeebeancompany.co.uk/app/uploads/2017/04/Coffee-Shop-1024x765.jpg",
         location: {
             lat: 53.483959,
             long: -2.244644,
@@ -37,7 +37,7 @@ exports.shopData = [
             },
         ],
         offers: {
-            img: "http://example.com/offers.jpg",
+            img: "https://unsplash.com/photos/time-lapse-photography-of-coffee-on-cup-5iRgh_G0eRY",
             description: "Buy one get one free on all pastries!",
             date: "2024-02-20",
         },
@@ -46,7 +46,7 @@ exports.shopData = [
         _id: 2,
         name: "Northern Roast",
         email: "northernroast@example.com",
-        avatar_url: "http://example.com/northern_roast_avatar.jpg",
+        avatar_url: "https://theo2.co.uk/assets/img/AzeraCafeEdit_03-96e2368b2f.JPG",
         location: {
             lat: 53.474688,
             long: -2.249487,
@@ -77,7 +77,7 @@ exports.shopData = [
             },
         ],
         offers: {
-            img: "http://example.com/offers2.jpg",
+            img: "https://unsplash.com/photos/high-angle-photo-of-two-green-mugs-filled-with-coffee-c2Y16tC3yO8",
             description: "10% off on all coffee beans!",
             date: "2024-02-21",
         },
@@ -86,7 +86,7 @@ exports.shopData = [
         _id: 3,
         name: "City Grind",
         email: "citygrind@example.com",
-        avatar_url: "http://example.com/city_grind_avatar.jpg",
+        avatar_url: "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/01/How_To_Start_A_Coffee_Shop_-_article_image.jpg",
         location: {
             lat: 53.479609,
             long: -2.243708,
@@ -117,7 +117,7 @@ exports.shopData = [
             },
         ],
         offers: {
-            img: "http://example.com/offers3.jpg",
+            img: "https://unsplash.com/photos/white-ceramic-mug-filled-with-coffee-nBJHO6wmRWw",
             description: "Free pastry with any large coffee purchase!",
             date: "2024-02-22",
         },
@@ -126,7 +126,7 @@ exports.shopData = [
         _id: 4,
         name: "Manchester Mugs",
         email: "manchestermugs@example.com",
-        avatar_url: "http://example.com/manchester_mugs_avatar.jpg",
+        avatar_url: "https://c8.alamy.com/comp/WG9GPP/small-coffee-shop-coffee-kyoto-japan-WG9GPP.jpg",
         location: {
             lat: 53.476319,
             long: -2.23928,
@@ -157,7 +157,7 @@ exports.shopData = [
             },
         ],
         offers: {
-            img: "http://example.com/offers4.jpg",
+            img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             description: "Half-price on all hot drinks from 3 PM to 5 PM!",
             date: "2024-02-23",
         },
