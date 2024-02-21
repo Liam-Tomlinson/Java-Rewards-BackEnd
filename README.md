@@ -11,7 +11,7 @@ $ sudo systemctl start mongod - starts mongodb locally
 > **MONGO=mongodb://localhost:27017/javarewards_test**
 
 
-# API Endpoints:
+# API Endpoints:( **img URL are fake and not working**)
 
 ## /users  
 - GET - responds with *users* object with array of all users
@@ -31,7 +31,11 @@ $ sudo systemctl start mongod - starts mongodb locally
     - DELETE - `{ email } `- deletes shop
 - ### /shops/menu
     - PATCH - `{ email , menu: [ { item, cost,description, item_img } ,...] }`
+- ### /shops/offers
+    - GET - responds with array of offers from all shops
 ## /orders
 - GET - responds with *orders* object with array of all orders
     - can filter by shop_id, user_id and itemName `/orders?shop_id=1&itemName=Capuccino`
 - POST - inserts or updates order | Request Body: `{ user_email, shop_email, item, quantity, price } `
+- ### /orders/status
+    - PATCH - updates status by order _id `{ _id }`
