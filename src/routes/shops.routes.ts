@@ -18,7 +18,7 @@ connectDatabase().then((database) => {
 
 router.get("/", getShops);
 router.post("/", postShop);
-router.get("/email", getShopByEmail);
+router.post("/email", getShopByEmail);
 router.delete("/email", deleteShopByEmail);
 router.patch("/email", patchShopByEmail);
 router.patch("/menu", patchMenuByEmail);

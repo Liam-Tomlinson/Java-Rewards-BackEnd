@@ -133,16 +133,16 @@ describe("GET /users/email", () => {
     expect(res.status).toBe(404);
   });
 });
-describe("GET /shops/email", () => {
+describe("POST /shops/email", () => {
   test("should return shop by given email", async () => {
     const email = { email: "mancunianbrew@example.com" };
-    const res = await request(app).get("/shops/email").send(email);
+    const res = await request(app).post("/shops/email").send(email);
     expect(res.status).toBe(200);
     expect(typeof res.body.shop[0].email).toBe("string");
   });
   test("should return 404 if email does not exist", async () => {
     const email = { email: "alexis@example.com" };
-    const res = await request(app).get("/shops/email").send(email);
+    const res = await request(app).post("/shops/email").send(email);
     expect(res.status).toBe(404);
   });
 });
