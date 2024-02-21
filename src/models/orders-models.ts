@@ -14,23 +14,39 @@ connectDatabase().then((database) => {
 interface Order extends Object {
   user_email?: string;
   shop_email: string;
-  item: string;
+  items: Item[];
   quantity: number;
   price: number;
   _id?: any;
+  item:string;
+
+ 
 }
 interface FilterBy {
   user_id?: number;
   shop_id?: number;
   itemName?: string;
 }
+type Item = {
+  item_name: string;
+  quantity: number;
+  price: number;
+};
 export const insertOrder = async (order: Order) => {
-  const { user_email, shop_email, item, quantity, price } = order;
-  if (!user_email || !shop_email || !item || !quantity || !price) {
+  const { user_email, shop_email, items } = order;
+  if (!user_email || !shop_email || !items ) {
     return Promise.reject({
       status: 400,
       msg: "Missing properties on Order body request",
     });
+  }
+  for (const item of items) {
+    if (!item.item_name || item.quantity == null || item.price == null) {
+      return Promise.reject({
+        status: 400,
+        msg: "Missing properties in item of Order body request",
+      });
+    }
   }
   try {
     const user = await Users.findOne({ email: user_email });
@@ -39,19 +55,15 @@ export const insertOrder = async (order: Order) => {
     if (!user || !shop) {
       return Promise.reject({ status: 404, msg: "email not found" });
     }
+    const totalCost = items.reduce((acc, currentItem) => {
+      return acc + currentItem.quantity * currentItem.price;
+    }, 0);
 
     const newOrder = {
       date: new Date().toISOString(),
-      totalCost: quantity * price,
+      totalCost: totalCost,
       status: "open",
-      items: [
-        {
-          item_name: item,
-          price: price,
-          quantity: quantity,
-        },
-      ],
-    };
+      items: items    };
     const updateOrder = await Orders.updateOne(
       { shop_id: shop._id, user_id: user._id },
       { $push: { orders: newOrder } },
