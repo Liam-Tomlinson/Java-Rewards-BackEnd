@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { fetchOrders, insertOrder } from "../models/orders-models";
+import { fetchOrders, insertOrder, updateOrderById } from "../models/orders-models";
 
 export const postOrder = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -27,5 +27,19 @@ export const getOrders = async (req: Request, res: Response, next: NextFunction)
       res.send({ orders });
   } catch (error) {
       next(error);
+  }
+};
+export const patchOrderById = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const orderId = req.body;
+    const order = await updateOrderById(orderId);
+
+    res.status(201).send({ order });
+  } catch (error) {
+    next(error);
   }
 };

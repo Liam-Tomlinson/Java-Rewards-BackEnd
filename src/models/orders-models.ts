@@ -17,6 +17,7 @@ interface Order extends Object {
     item: string;
     quantity: number;
     price: number;
+    _id?:any;
 
 }
 interface FilterBy {
@@ -82,3 +83,25 @@ export const fetchOrders = async (filterBy: FilterBy = {}) => {
 
     return orders;
 };
+export const updateOrderById = async (order: Order) => {
+    const { _id } = order;
+        try {
+      let updatedStatus = await Orders.findOneAndUpdate(
+          { shop_id: _id },
+          { $set: { "orders.status": "closed" } },
+          { returnDocument: "after" }
+        );
+  console.log(updatedStatus)
+      if (updatedStatus === null) {
+        return Promise.reject({
+          status: 404,
+          msg: "Id not found",
+        });
+      } else {
+        return updatedStatus;
+      }
+    } catch (error) {
+      throw error;
+    }
+  };
+  
