@@ -258,6 +258,19 @@ describe("POST /orders", () => {
    
 
   });
+  test("Should respond with error when missing properties in body", async () => {
+    const orderBody = {
+      user_email:"john@example.com",
+      shop_email:"mancunianbrew@example.com",
+      quantity:4,
+      price:10
+      }
+    const res = await request(app).post("/orders").send(orderBody);
+    expect(res.status).toBe(400);
+   
+   
+
+  });
   test("should return error 404 when shop or user not found", async () => {
     const orderBody = {
       user_email:"NOT_FOUND@example.com",

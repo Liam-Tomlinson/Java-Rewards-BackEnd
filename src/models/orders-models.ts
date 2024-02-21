@@ -26,6 +26,9 @@ interface FilterBy {
 }
 export const insertOrder = async (order: Order) => {
     const { user_email, shop_email, item, quantity, price } = order;
+    if (!user_email || !shop_email || !item || !quantity || !price){
+        return Promise.reject({ status: 400, msg: "Missing properties on Order body request" });
+    }
     try {
         const user = await Users.findOne({ email: user_email });
         const shop = await CoffeeShop.findOne({ email: shop_email });
@@ -33,6 +36,7 @@ export const insertOrder = async (order: Order) => {
         if (!user || !shop) {
             return Promise.reject({ status: 404, msg: "email not found" });
         }
+        
         const newOrder = {
             date: new Date().toISOString(),
             totalCost: quantity * price,

@@ -25,7 +25,12 @@ app.use((err: CustomError, req: Request, res: Response, next: NextFunction) => {
   }
   if (err.status === 404) {
     res.status(404).send(err.msg);
-  } else {
+  } 
+  if (err.status === 400) {
+    res.status(400).send(err.msg);
+  } 
+  
+  else {
     res.status(500).send("internal server error");
   }
 });
