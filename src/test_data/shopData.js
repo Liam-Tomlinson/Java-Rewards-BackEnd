@@ -37,7 +37,7 @@ exports.shopData = [
             },
         ],
         offers: {
-            img: "https://unsplash.com/photos/time-lapse-photography-of-coffee-on-cup-5iRgh_G0eRY",
+            img: "https://images.unsplash.com/photo-1522992319-0365e5f11656?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             description: "Buy one get one free on all pastries!",
             date: "2024-02-20",
         },
@@ -77,7 +77,7 @@ exports.shopData = [
             },
         ],
         offers: {
-            img: "https://unsplash.com/photos/high-angle-photo-of-two-green-mugs-filled-with-coffee-c2Y16tC3yO8",
+            img: "https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             description: "10% off on all coffee beans!",
             date: "2024-02-21",
         },
@@ -117,7 +117,7 @@ exports.shopData = [
             },
         ],
         offers: {
-            img: "https://unsplash.com/photos/white-ceramic-mug-filled-with-coffee-nBJHO6wmRWw",
+            img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             description: "Free pastry with any large coffee purchase!",
             date: "2024-02-22",
         },
