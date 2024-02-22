@@ -20,6 +20,7 @@ interface Shop extends Object {
   description?: string;
   location?: object;
   menu: object;
+  offer:object;
 }
 export const insertShop = async (shop: Shop) => {
   try {
@@ -124,7 +125,7 @@ export const updateMenuByEmail = async (shop: Shop) => {
 export const fetchOffers = async () => {
   const shops = await db.collection("CoffeeShops").find({}).toArray();
   const offers = shops.map((shop) => {
-    console.log(shop,"shop");
+   
     
     const offer = {
       name: shop.name,
@@ -138,3 +139,15 @@ export const fetchOffers = async () => {
 
   return offers;
 };
+export const updateOffersByEmail = async(email:any,shop:Shop) => {
+ 
+  try{
+let updatedOffer = await db.collection("CoffeeShops").findOneAndUpdate(
+  { email },
+  { $set: { offers:shop} },
+  { returnDocument: "after" }
+);
+return updatedOffer
+  }
+  catch(err){throw err}
+}

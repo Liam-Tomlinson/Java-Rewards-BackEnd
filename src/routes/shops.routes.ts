@@ -9,6 +9,7 @@ import {
   patchShopByEmail,
   patchMenuByEmail,
   getOffers,
+  patchOffersByEmail,
 } from "../controllers/shops-controllers";
 const router = Router();
 let db: Db;
@@ -24,5 +25,6 @@ router.delete("/email", deleteShopByEmail);
 router.patch("/email", patchShopByEmail);
 router.patch("/menu", patchMenuByEmail);
 router.get("/offers", getOffers);
+router.patch("/offers", patchOffersByEmail);
 
 export { router };

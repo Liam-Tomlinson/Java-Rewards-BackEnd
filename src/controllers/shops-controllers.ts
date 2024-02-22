@@ -7,6 +7,7 @@ import {
   updateShopByEmail,
   updateMenuByEmail,
   fetchOffers,
+  updateOffersByEmail,
 } from "../models/shops-models";
 
 export const getShops = async (
@@ -98,6 +99,21 @@ export const getOffers = async (
   const offers = await fetchOffers();
   try {
     res.send({ offers });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const patchOffersByEmail = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const {email,offers} = req.body;
+    console.log(offers)
+    const offer = await updateOffersByEmail(email,offers);
+    res.status(200).send(offer);
   } catch (error) {
     next(error);
   }
