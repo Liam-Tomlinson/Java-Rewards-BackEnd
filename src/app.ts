@@ -31,6 +31,7 @@ app.use((err: CustomError, req: Request, res: Response, next: NextFunction) => {
   } 
   
   else {
+    console.log(res)
     res.status(500).send("internal server error");
   }
 });

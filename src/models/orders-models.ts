@@ -59,18 +59,20 @@ export const insertOrder = async (order: Order) => {
       return acc + currentItem.quantity * currentItem.price;
     }, 0);
 
-    const newOrder = {
+    const newOrder: any = {
       date: new Date().toISOString(),
       totalCost: totalCost,
       status: "open",
       items: items    };
-    const updateOrder = await Orders.updateOne(
+    const updateOrder = await Orders.findOneAndUpdate(
       { shop_id: shop._id, user_id: user._id },
       { $push: { orders: newOrder } },
-      { upsert: true }
+      { returnDocument: "after" ,upsert: true },
+     
     );
+    const insertedOrder = updateOrder?.orders[updateOrder.orders.length - 1] ?? null
 
-    return updateOrder;
+    return insertedOrder;
   } catch (error) {
     throw error;
   }
