@@ -33,6 +33,7 @@ $ sudo systemctl start mongod - starts mongodb locally
     - PATCH - `{ email , menu: [ { item, cost,description, item_img } ,...] }`
 - ### /shops/offers
     - GET - responds with array of offers from all shops
+    - PATCH - `{ email , offers: { img, description, date }}` - update shop's offer by given email
 ## /orders
 - GET - responds with *orders* object with array of all orders
     - can filter by shop_id, user_id and itemName `/orders?shop_id=1&itemName=Capuccino`
