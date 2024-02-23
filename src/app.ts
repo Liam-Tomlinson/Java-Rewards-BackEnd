@@ -10,7 +10,11 @@ const stripe = new Stripe(stripeKey);
 
 const app: Application = express();
 app.use(express.json());
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser.json());
 app.use("/users", userRoutes);
 app.use("/shops", shopsRoutes);
 app.use("/orders", ordersRoutes);
