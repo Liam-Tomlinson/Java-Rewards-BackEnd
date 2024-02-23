@@ -51,6 +51,14 @@ export const insertOrder = async (order: Order) => {
   try {
     const user = await Users.findOne({ email: user_email });
     const shop = await CoffeeShop.findOne({ email: shop_email });
+    
+    const highestId = await Orders.aggregate([
+      { $unwind: "$orders" }, 
+      { $group: { _id: null, maxOrderId: { $max: "$orders.order_id" } } },
+      { $project: { _id: 0, maxOrderId: 1 } } 
+    ]).toArray()
+    let currentHighestId = highestId[0].maxOrderId
+    
 
     if (!user || !shop) {
       return Promise.reject({ status: 404, msg: "email not found" });
@@ -60,6 +68,7 @@ export const insertOrder = async (order: Order) => {
     }, 0);
 
     const newOrder: any = {
+      order_id:++currentHighestId,
       date: new Date().toISOString(),
       totalCost: totalCost,
       status: "open",
