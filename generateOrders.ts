@@ -86,10 +86,8 @@ for (let i = 0; i < 2000; i++) {
   getRandomOrder(randomShopId, randomUserId);
 }
 
-// Convert orders array to JSON string
 const jsonData = JSON.stringify(ordersData, null, 2);
 
-// Write JSON data to a file
 fs.writeFile('random_orders.json', jsonData, 'utf8', (err) => {
     if (err) {
         console.error('Error writing to file:', err);

@@ -75,9 +75,7 @@ for (var i = 0; i < 2000; i++) {
     var randomUserId = userIds[Math.floor(Math.random() * userIds.length)];
     getRandomOrder(randomShopId, randomUserId);
 }
-// Convert orders array to JSON string
 var jsonData = JSON.stringify(ordersData, null, 2);
-// Write JSON data to a file
 fs.writeFile('random_orders.json', jsonData, 'utf8', function (err) {
     if (err) {
         console.error('Error writing to file:', err);
