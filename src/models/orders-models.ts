@@ -179,11 +179,11 @@ let pipeline
   return orders;
 };
 export const updateOrderById = async (order: Order) => {
-  const { shop_id } = order;
+  const { order_id } = order;
 
   try {
     let updatedStatus = await Orders.findOneAndUpdate(
-      { "orders.shop_id": shop_id },
+      { "orders.order_id": order_id },
       { $set: { "orders.$.status": "closed" } },
       { returnDocument: "after" }
     );
