@@ -144,6 +144,11 @@ let pipeline
         }
       },
       {
+        $sort: {
+          'order.date': 1
+        }
+      },
+      {
         $group: {
           _id: null,
           shop_id: { $first: '$shop_id' },
