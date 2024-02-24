@@ -76,9 +76,9 @@ exports.userData = [
     },
     {
         _id: 10,
-        name: "Amanda Anderson",
+        name: "Simon Test",
         age: 29,
-        email: "amanda@example.com",
+        email: "simon@test.com",
         avatar_url: "https://static.vecteezy.com/system/resources/previews/007/043/161/non_2x/male-avatar-smiling-portrait-of-a-cheerful-young-man-with-a-happy-smile-vector.jpg",
         coffee_count: 21,
     },

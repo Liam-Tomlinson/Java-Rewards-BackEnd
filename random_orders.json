@@ -1,4 +1,4 @@
-export const ordersData: object[] = [
+[
   {
     "_id": 1,
     "shop_id": 3,

@@ -9,17 +9,18 @@ export const populateTestData = async () => {
   console.log("Dropping database...");
   await db.dropDatabase();
 
-  const shops = db.collection("CoffeeShops");
-  const users = db.collection("Users");
-  const orders = db.collection("Orders");
-  db.collection("CoffeeShops").createIndex({ name: 1 }, { unique: true });
-  db.collection("Users").createIndex({ email: 1 }, { unique: true });
+  const Shops = db.collection("CoffeeShops");
+  const Users = db.collection("Users");
+  const Orders = db.collection("Orders");
+  Shops.createIndex({ name: 1 }, { unique: true });
+  Users.createIndex({ email: 1 }, { unique: true });
+  Orders.createIndex({ "orders.order_id": 1 });
 
-  await shops.insertMany(shopData);
+  await Shops.insertMany(shopData);
 
-  await users.insertMany(userData);
+  await Users.insertMany(userData);
 
-  await orders.insertMany(ordersData);
+  await Orders.insertMany(ordersData);
 
   console.log("Test data has been populated.");
 };
