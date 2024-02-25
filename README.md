@@ -16,6 +16,8 @@ $ sudo systemctl start mongod - starts mongodb locally
 ## /users  
 - GET - responds with *users* object with array of all users
 - POST - `{ name, age: number, email, avatar_url}`
+- ### /users/:user_id
+    - GET - responds with user by given user_id
 - ### /users/email
     - POST - `{ email }` - responds with user by given email
     - PATCH - `{ email , age: ...}` - updates shop by given email
@@ -25,6 +27,8 @@ $ sudo systemctl start mongod - starts mongodb locally
 ## /shops
 - GET - responds with *shops* object with array of all coffee shops
 - POST - `{ name, email, lat , long, description , avatar_url}`
+- ### /users/:shop_id
+    - GET - responds with shop by given shop_id
 - ### /shops/email
     - POST - `{ email }` - responds with shop by given email
     - PATCH - `{ email : , description: ...}` - updates shop by given email
@@ -36,7 +40,7 @@ $ sudo systemctl start mongod - starts mongodb locally
     - PATCH - `{ email , offers: { img, description, date }}` - update shop's offer by given email
 ## /orders
 - GET - responds with *orders* object with array of all orders
-    - can filter by shop_id and user_id `/orders?shop_id=1`
+    - can filter by shop_id, user_id , year and month `/orders?shop_id=1` `/orders?shop_id=1&year=2023&month=12` 
 - POST - inserts or updates order | Request Body: `{ user_email, shop_email, items[item_name,quantity, price] } `
 - ### /orders/status
-    - PATCH - updates status by order _id `{ _id }`
+    - PATCH - updates status by order order_id `{ order_id }`

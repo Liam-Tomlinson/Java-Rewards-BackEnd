@@ -19,13 +19,17 @@ interface Order extends Object {
   price: number;
   shop_id?: any;
   item: string;
+  year?: any;
+  month?: any;
+  order_id?: number;
 
 
 }
 interface FilterBy {
   user_id?: number;
   shop_id?: number;
-  itemName?: string;
+  year?: any;
+  month?: any;
 }
 type Item = {
   item_name: string;
@@ -90,9 +94,10 @@ export const insertOrder = async (order: Order) => {
 };
 export const fetchOrders = async (filterBy: FilterBy = {}) => {
   let query: any = {};
-let orders
-let pipeline
-  if (filterBy.user_id && !filterBy.shop_id) {
+  console.log(filterBy)
+  let orders
+  let pipeline
+  if (!filterBy.year && filterBy.user_id && !filterBy.shop_id) {
     pipeline = [
       { $match: { 'user_id': filterBy.user_id } },
       { $unwind: '$orders' },
@@ -121,11 +126,11 @@ let pipeline
           orders: 1
         }
       }
-  
+
     ];
     orders = await Orders.aggregate(pipeline).toArray();
   }
-  else if (filterBy.shop_id && !filterBy.user_id) {
+  else if (!filterBy.year && filterBy.shop_id && !filterBy.user_id) {
     pipeline = [
       { $match: { 'shop_id': filterBy.shop_id } },
       { $unwind: '$orders' },
@@ -162,20 +167,161 @@ let pipeline
           orders: 1
         }
       }
-  
+
     ];
     orders = await Orders.aggregate(pipeline).toArray();
   }
-  else if (filterBy.shop_id && filterBy.user_id) {
+  else if (!filterBy.year && filterBy.user_id && filterBy.shop_id) {
     query.user_id = filterBy.user_id
     query.shop_id = filterBy.shop_id;
-    
+
     orders = await Orders.find(query).toArray();
   }
-  else{ 
+  else if (filterBy.year && filterBy.user_id && filterBy.shop_id) {
+
+    let pipeline = [
+      {
+        $match: {
+          'shop_id': filterBy.shop_id,
+          'user_id': filterBy.user_id
+        }
+      },
+      { $unwind: '$orders' },
+      {
+        $match: {
+          'orders.date': {
+            $gte: `${filterBy.year}-${filterBy.month}-01T00:00:00.000Z`,
+            $lt: `${filterBy.year}-${parseInt(filterBy.month) < 10 ? '0' : ''}${parseInt(filterBy.month) + 1}-01T00:00:00.000Z`
+          }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          order: {
+            order_id: '$orders.order_id',
+            user_id: '$user_id',
+            date: '$orders.date',
+            totalCost: '$orders.totalCost',
+            status: '$orders.status',
+            items: '$orders.items'
+          }
+        }
+      },
+      {
+        $group: {
+          _id: null,
+          orders: { $push: '$order' }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          orders: 1
+        }
+      }
+    ];
+
+    orders = await Orders.aggregate(pipeline).toArray()
+  }
+  else if (filterBy.year && filterBy.user_id && !filterBy.shop_id) {
+
+    let pipeline = [
+      {
+        $match: {
+
+          'user_id': filterBy.user_id
+        }
+      },
+      { $unwind: '$orders' },
+      {
+        $match: {
+          'orders.date': {
+            $gte: `${filterBy.year}-${filterBy.month}-01T00:00:00.000Z`,
+            $lt: `${filterBy.year}-${parseInt(filterBy.month) + 1}-01T00:00:00.000Z`
+          }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          order: {
+            order_id: '$orders.order_id',
+            user_id: '$user_id',
+            date: '$orders.date',
+            totalCost: '$orders.totalCost',
+            status: '$orders.status',
+            items: '$orders.items'
+          }
+        }
+      },
+      {
+        $group: {
+          _id: null,
+          orders: { $push: '$order' }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          orders: 1
+        }
+      }
+    ];
+
+    orders = await Orders.aggregate(pipeline).toArray()
+  }
+  else if (filterBy.year && !filterBy.user_id && filterBy.shop_id) {
+
+    let pipeline = [
+      {
+        $match: {
+
+          'shop_id': filterBy.shop_id,
+        }
+      },
+      { $unwind: '$orders' },
+      {
+        $match: {
+          'orders.date': {
+            $gte: `${filterBy.year}-${filterBy.month}-01T00:00:00.000Z`,
+            $lt: `${filterBy.year}-${parseInt(filterBy.month) + 1}-01T00:00:00.000Z`
+          }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          order: {
+            order_id: '$orders.order_id',
+            user_id: '$user_id',
+            date: '$orders.date',
+            totalCost: '$orders.totalCost',
+            status: '$orders.status',
+            items: '$orders.items'
+          }
+        }
+      },
+      {
+        $group: {
+          _id: null,
+          orders: { $push: '$order' }
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          orders: 1
+        }
+      }
+    ];
+
+    orders = await Orders.aggregate(pipeline).toArray()
+  }
+  else {
     orders = await Orders.find(query).toArray();
   }
-    
+
   return orders;
 };
 export const updateOrderById = async (order: Order) => {
@@ -200,29 +346,3 @@ export const updateOrderById = async (order: Order) => {
     throw error;
   }
 };
-
-async function getOrdersByMonth(db, year, month) {
-  const collection = db.collection('Orders');
-  const pipeline = [
-    {
-      $match: {
-        'orders.date': {
-          $gte: new Date(year, month - 1, 1),
-          $lt: new Date(year, month, 1)
-        }
-      }
-    }
-  ];
-  const result = await collection.aggregate(pipeline).toArray();
-  return result;
-}
-async function getOrdersByShopId(db, shopId) {
-  const collection = db.collection('Orders');
-  const pipeline = [
-    {
-      $match: { 'orders.shop_id': shopId }
-    }
-  ];
-  const result = await collection.aggregate(pipeline).toArray();
-  return result;
-}

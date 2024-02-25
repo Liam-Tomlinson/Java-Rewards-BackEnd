@@ -19,6 +19,22 @@ connectDatabase().then((database) => {
 });
 
 router.get("/", getShops);
+router.get("/:shop_id", async (req: Request, res: Response) => {
+  try {
+    const shop_id = Number(req.params.shop_id);
+  const shop = await db
+      .collection("CoffeeShops")
+      .find({ _id: shop_id })
+      .toArray();
+    console.log(shop)
+    res.status(200).send({ shop });
+  } catch (err) {
+
+    res
+      .status(500)
+      .send({ message: "An error occurred while fetching a shop by id." });
+  }
+});
 router.post("/", postShop);
 router.post("/email", getShopByEmail);
 router.delete("/email", deleteShopByEmail);

@@ -14,12 +14,13 @@ export const postOrder = async (req: Request, res: Response, next: NextFunction)
 
 export const getOrders = async (req: Request, res: Response, next: NextFunction) => {
   try {
-      const { user_id, shop_id, itemName } = req.query
+      const { user_id, shop_id, month,year } = req.query
 
-      const filterBy = {
+      const filterBy:any = {
           user_id: user_id ? parseInt(user_id as string, 10) : undefined,
           shop_id: shop_id ? parseInt(shop_id as string, 10) : undefined,
-          itemName: itemName ? itemName as string : undefined,
+          month: month ? month : undefined,
+          year: year ? year : undefined
       };
 
       const orders = await fetchOrders(filterBy);

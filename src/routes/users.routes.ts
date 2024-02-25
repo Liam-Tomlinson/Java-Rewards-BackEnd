@@ -16,22 +16,24 @@ connectDatabase().then((database) => {
   db = database;
 });
 router.get("/", getUsers);
-// router.get("/:user_id", async (req: Request, res: Response) => {
-//   try {
-//     const user_id = req.params.user_id;
+router.get("/:user_id", async (req: Request, res: Response) => {
+  try {
+    const user_id = Number(req.params.user_id);
+    console.log(user_id)
 
-//     const user = await db
-//       .collection("Users")
-//       .find({ user_id: user_id })
-//       .toArray();
-//     res.status(200).send({ user });
-//   } catch (err) {
+    const user = await db
+      .collection("Users")
+      .find({ _id: user_id })
+      .toArray();
+    console.log(user)
+    res.status(200).send({ user });
+  } catch (err) {
 
-//     res
-//       .status(500)
-//       .send({ message: "An error occurred while fetching a user by id." });
-//   }
-// });
+    res
+      .status(500)
+      .send({ message: "An error occurred while fetching a user by id." });
+  }
+});
 router.post("/", postUser);
 router.post("/email", getUserByEmail);
 router.delete("/email", deleteUserByEmail);

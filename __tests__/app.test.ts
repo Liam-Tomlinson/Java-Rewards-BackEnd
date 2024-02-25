@@ -3,12 +3,12 @@ import { connectDatabase, client } from "../src/dbConnection";
 import app from "../src/app";
 import { populateTestData } from "../src/seed";
 import { Db } from "mongodb";
-import Test from "supertest/lib/test";
+
 let db: Db;
 beforeAll(async () => {
   db = await connectDatabase();
 });
-beforeEach(()=>{
+beforeEach(() => {
   return populateTestData()
 })
 afterAll(async () => {
@@ -235,8 +235,12 @@ describe("GET /orders", () => {
   test("Should return an array of all orders", async () => {
     const res = await request(app).get("/orders");
     const expected = res.body.orders;
-
-    expect(expected).toHaveLength(35);
+    let orderSum = 0
+    expected.forEach((item: any) => {
+      orderSum += item.orders.length
+    })
+    expect(expected).toHaveLength(17);
+    expect(orderSum).toBe(898);
 
     expect(res.status).toBe(200);
   });
@@ -254,15 +258,17 @@ describe("POST /orders", () => {
     const orderBody = {
       user_email: "john@example.com",
       shop_email: "mancunianbrew@example.com",
-      items:[ { item_name: "Cappuccino",
-      quantity: 4,
-      price: 10}]
-    
+      items: [{
+        item_name: "Cappuccino",
+        quantity: 4,
+        price: 10
+      }]
+
     };
     const res = await request(app).post("/orders").send(orderBody);
-  
+
     expect(res.status).toBe(201);
-    
+
   });
   test("Should respond with error when missing properties in body", async () => {
     const orderBody = {
@@ -278,14 +284,16 @@ describe("POST /orders", () => {
     const orderBody = {
       user_email: "NOTFOUND@example.com",
       shop_email: "mancunianbrew@example.com",
-      items:[ { item_name: "Cappuccino",
-      quantity: 4,
-      price: 10}]
-    
+      items: [{
+        item_name: "Cappuccino",
+        quantity: 4,
+        price: 10
+      }]
+
     };
 
     const response = await request(app).post("/orders").send(orderBody);
-   
+
     expect(response.status).toBe(404);
     expect(response.text).toBe("email not found");
   });
@@ -293,7 +301,7 @@ describe("POST /orders", () => {
 describe("PATCH /orders/status", () => {
   test("should update the order status", async () => {
     const orderBody = {
-      _id: 10,
+      order_id: 10,
     };
     const res = await request(app).patch("/orders/status").send(orderBody);
     expect(res.status).toBe(200);
@@ -301,7 +309,7 @@ describe("PATCH /orders/status", () => {
   });
   test("should return error if order id not found", async () => {
     const orderBody = {
-      _id: "65d5dec7623525f596268010",
+      order_id: "65d5dec7623525f596268010",
     };
     const res = await request(app).patch("/orders/status").send(orderBody);
     expect(res.status).toBe(404);
