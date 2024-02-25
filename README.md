@@ -44,3 +44,5 @@ $ sudo systemctl start mongod - starts mongodb locally
 - POST - inserts or updates order | Request Body: `{ user_email, shop_email, items[item_name,quantity, price] } `
 - ### /orders/status
     - PATCH - updates status by order order_id `{ order_id }`
+- ### /orders/total
+    - GET - responds with total sum of each item

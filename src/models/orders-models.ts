@@ -346,3 +346,17 @@ export const updateOrderById = async (order: Order) => {
     throw error;
   }
 };
+export const fetchTotalItems = async () => {
+  const items = await Orders.aggregate([
+    { $unwind: "$orders" },
+    { $unwind: "$orders.items" },
+    {
+      $group: {
+        _id: "$orders.items.item_name",
+        totalAmount: { $sum: { $multiply: ["$orders.items.price", "$orders.items.quantity"] } }
+      }
+    }
+  ]).toArray()
+  return items
+
+}

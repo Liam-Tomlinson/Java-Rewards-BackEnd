@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { fetchOrders, insertOrder, updateOrderById } from "../models/orders-models";
+import { fetchOrders, fetchTotalItems, insertOrder, updateOrderById } from "../models/orders-models";
 
 export const postOrder = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -44,3 +44,7 @@ export const patchOrderById = async (
     next(error);
   }
 };
+export const getTotalItems = async (req: Request, res: Response, next: NextFunction) =>{
+  const data = await fetchTotalItems()
+  res.send(data);
+}

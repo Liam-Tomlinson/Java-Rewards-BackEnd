@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {  Db  } from "mongodb";
 import { connectDatabase } from "../dbConnection";
-import { getOrders, patchOrderById, postOrder } from "../controllers/orders-controllers";
+import { getOrders, getTotalItems, patchOrderById, postOrder } from "../controllers/orders-controllers";
 
 const router = Router();
 let db: Db;
@@ -12,6 +12,8 @@ connectDatabase().then((database) => {
 
 router.post("/",postOrder)
 router.get("/",getOrders)
+router.get("/total",getTotalItems)
 router.patch("/status",patchOrderById)
+
 
 export { router };
