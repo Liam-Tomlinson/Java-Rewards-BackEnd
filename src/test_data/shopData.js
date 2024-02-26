@@ -13,8 +13,8 @@ exports.shopData = [
         },
         description: "A cozy coffee shop serving locally roasted coffee.",
         totalRating: {
-            total_votes: 300,
-            sum_of_ratings: 900,
+            total_votes: 1,
+            sum_of_ratings: 3,
             average_rating: 3,
         },
         menu: [
@@ -54,9 +54,9 @@ exports.shopData = [
         },
         description: "Specialty coffee and artisan pastries.",
         totalRating: {
-            total_votes: 120,
-            sum_of_ratings: 540,
-            average_rating: 4.5,
+            total_votes: 1,
+            sum_of_ratings: 4,
+            average_rating: 4,
         },
         menu: [
             {
@@ -95,8 +95,8 @@ exports.shopData = [
         },
         description: "Modern coffee spot with a variety of brews.",
         totalRating: {
-            total_votes: 120,
-            sum_of_ratings: 540,
+            total_votes: 1,
+            sum_of_ratings: 4.5,
             average_rating: 4.5,
         },
         menu: [
@@ -136,9 +136,9 @@ exports.shopData = [
         },
         description: "Quaint café serving freshly brewed coffee.",
         totalRating: {
-            total_votes: 100,
-            sum_of_ratings: 350,
-            average_rating: 3.5,
+            total_votes: 1,
+            sum_of_ratings: 5,
+            average_rating: 5,
         },
         menu: [
             {

@@ -37,9 +37,9 @@ $ sudo systemctl start mongod - starts mongodb locally
     - PATCH - `{ email , menu: [ { item, cost,description, item_img } ,...] }`
 - ### /shops/offers
     - GET - responds with array of offers from all shops
-    - PATCH - `{ email , offers: { img, description, date }}` - update shop's offer by given email
+    - PATCH - `{ email , offers: { img, description, date }}` - updates shop's offer by given email
 - ### /shops/rating
-    - PATCH - `{email, rating }`
+    - PATCH - `{email, rating }` - updates rating of given shop
 ## /orders
 - GET - responds with *orders* object with array of all orders
     - can filter by shop_id, user_id , year and month `/orders?shop_id=1` `/orders?shop_id=1&year=2023&month=12` 
@@ -47,4 +47,4 @@ $ sudo systemctl start mongod - starts mongodb locally
 - ### /orders/status
     - PATCH - updates status by order order_id `{ order_id }`
 - ### /orders/total/:shop_id
-    - GET - responds with total sum of each item
+    - GET - responds with sum of all items for given shop_id
