@@ -63,7 +63,7 @@ router.patch("/rating", async (req: Request, res: Response) => {
 
     res
       .status(500)
-      .send({ message: "An error occurred while fetching a shop by id." });
+      .send({ message: "An error occurred while updating rating." });
   }
 });
 router.post("/email", getShopByEmail);
