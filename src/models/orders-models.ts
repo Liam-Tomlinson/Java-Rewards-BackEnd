@@ -191,7 +191,7 @@ export const fetchOrders = async (filterBy: FilterBy = {}) => {
         $match: {
           'orders.date': {
             $gte: `${filterBy.year}-${filterBy.month}-01T00:00:00.000Z`,
-            $lt: `${filterBy.year}-${parseInt(filterBy.month) < 10 ? '0' : ''}${parseInt(filterBy.month) + 1}-01T00:00:00.000Z`
+            $lt: `${filterBy.year}-${parseInt(filterBy.month) + 1}-01T00:00:00.000Z`
           }
         }
       },
