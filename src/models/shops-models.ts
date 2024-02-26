@@ -124,6 +124,7 @@ export const updateMenuByEmail = async (shop: Shop) => {
 };
 export const fetchOffers = async () => {
   const shops = await db.collection("CoffeeShops").find({}).toArray();
+  
   const offers = shops.map((shop) => {
    
     

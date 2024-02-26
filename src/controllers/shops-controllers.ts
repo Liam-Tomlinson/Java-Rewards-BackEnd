@@ -111,7 +111,7 @@ export const patchOffersByEmail = async (
 ) => {
   try {
     const {email,offers} = req.body;
-    console.log(offers)
+   
     const offer = await updateOffersByEmail(email,offers);
     res.status(200).send(offer);
   } catch (error) {

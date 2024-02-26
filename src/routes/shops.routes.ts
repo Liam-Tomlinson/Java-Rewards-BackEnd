@@ -19,6 +19,7 @@ connectDatabase().then((database) => {
 });
 
 router.get("/", getShops);
+router.get("/offers", getOffers);
 router.get("/:shop_id", async (req: Request, res: Response) => {
   try {
     const shop_id = Number(req.params.shop_id);
@@ -26,7 +27,7 @@ router.get("/:shop_id", async (req: Request, res: Response) => {
       .collection("CoffeeShops")
       .find({ _id: shop_id })
       .toArray();
-    console.log(shop)
+
     res.status(200).send({ shop });
   } catch (err) {
 
@@ -40,7 +41,7 @@ router.post("/email", getShopByEmail);
 router.delete("/email", deleteShopByEmail);
 router.patch("/email", patchShopByEmail);
 router.patch("/menu", patchMenuByEmail);
-router.get("/offers", getOffers);
+
 router.patch("/offers", patchOffersByEmail);
 
 export { router };
