@@ -97,7 +97,6 @@ export const updateShopByEmail = async (shop: Shop) => {
     throw error;
   }
 };
-
 export const updateMenuByEmail = async (shop: Shop) => {
   const { email, menu } = shop;
 

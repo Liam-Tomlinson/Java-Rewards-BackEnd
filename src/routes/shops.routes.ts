@@ -37,6 +37,35 @@ router.get("/:shop_id", async (req: Request, res: Response) => {
   }
 });
 router.post("/", postShop);
+router.patch("/rating", async (req: Request, res: Response) => {
+  try {
+    const rating = Number(req.body.rating);
+    const shop_email = req.body.email
+    
+    const newTotalRating={
+      "total_votes": 300,
+      "sum_of_ratings": 900,
+      "average_rating": 3
+    }
+   
+  const shop = await db
+      .collection("CoffeeShops")
+      .findOneAndUpdate(
+        { email:shop_email },
+        { $set: { totalRating:newTotalRating } },
+        { returnDocument: "after" }
+      );
+
+      
+
+    res.status(200).send({ shop });
+  } catch (err) {
+
+    res
+      .status(500)
+      .send({ message: "An error occurred while fetching a shop by id." });
+  }
+});
 router.post("/email", getShopByEmail);
 router.delete("/email", deleteShopByEmail);
 router.patch("/email", patchShopByEmail);
