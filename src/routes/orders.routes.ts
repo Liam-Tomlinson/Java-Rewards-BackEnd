@@ -12,7 +12,7 @@ connectDatabase().then((database) => {
 
 router.post("/",postOrder)
 router.get("/",getOrders)
-router.get("/total",getTotalItems)
+router.get("/total/:shop_id",getTotalItems)
 router.patch("/status",patchOrderById)
 
 

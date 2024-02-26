@@ -346,8 +346,10 @@ export const updateOrderById = async (order: Order) => {
     throw error;
   }
 };
-export const fetchTotalItems = async () => {
+export const fetchTotalItems = async (shop_id:string) => {
+  
   const items = await Orders.aggregate([
+    { $match: { 'shop_id': Number(shop_id) } },
     { $unwind: "$orders" },
     { $unwind: "$orders.items" },
     {

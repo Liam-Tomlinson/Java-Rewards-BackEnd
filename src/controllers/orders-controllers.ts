@@ -45,6 +45,8 @@ export const patchOrderById = async (
   }
 };
 export const getTotalItems = async (req: Request, res: Response, next: NextFunction) =>{
-  const data = await fetchTotalItems()
+  const { shop_id } = req.params
+    
+  const data = await fetchTotalItems(shop_id)
   res.send(data);
 }
