@@ -33,6 +33,13 @@ export const insertShop = async (shop: Shop) => {
         long: shop.long,
       },
       description: shop.description,
+      offers:{img:"",description:"",date:""},
+      menu:[],
+      totalRating:{
+        total_votes:0,
+        average_rating:0,
+        sum_of_ratings:0
+      }
     });
     let data: any = {};
 
