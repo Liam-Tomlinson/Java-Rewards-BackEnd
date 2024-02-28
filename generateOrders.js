@@ -32,8 +32,8 @@ var items = {
     "Caffè Mocha": 5
 };
 function getRandomDate() {
-    var start = new Date('2023-12-01').getTime();
-    var end = new Date('2024-02-28').getTime();
+    var start = new Date('2024-02-29').getTime();
+    var end = new Date('2024-03-01').getTime();
     var randomTime = start + Math.random() * (end - start);
     return new Date(randomTime);
 }
@@ -71,7 +71,7 @@ function getRandomOrder(shop_id, user_id) {
 }
 var shopIds = [1, 2, 3, 4];
 var userIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-for (var i = 0; i < 2000; i++) {
+for (var i = 0; i < 20; i++) {
     var randomShopId = shopIds[Math.floor(Math.random() * shopIds.length)];
     var randomUserId = userIds[Math.floor(Math.random() * userIds.length)];
     getRandomOrder(randomShopId, randomUserId);

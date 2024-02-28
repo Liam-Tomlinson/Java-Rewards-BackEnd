@@ -34,7 +34,7 @@ const items = {
   
   function getRandomDate() {
     const start = new Date('2023-12-01').getTime();
-    const end = new Date('2024-02-28').getTime();
+    const end = new Date('2024-02-29').getTime();
     const randomTime = start + Math.random() * (end - start);
     return new Date(randomTime);
   }

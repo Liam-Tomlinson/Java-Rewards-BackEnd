@@ -1,17 +1,23 @@
 # Java-Rewards-BackEnd
 
-$ sudo systemctl start mongod - starts mongodb locally
+#### API built in Node.js, using TypeScript, Express, MongoDB, Stripe API and Jest for testing.
 
+
+### Scripts
 > npm run dev - starts the server  
- npm run seed - seeds Database
+ npm run seed - seeds Database  
+ npm run test - run Jest tests
 
 # .env enviroment variables
 > **PORT=9999**  
-> **STATUS=dev**  
-> **MONGO=mongodb://localhost:27017/javarewards_test**
+> **STATUS=dev**  (or "production" to use MONGO_PRODUCTION)  
+> **MONGO=mongodb://localhost:27017/javarewards_test** ( locally hosted mongoDB)  
+**MONGO_PRODUCTION** ( mongoGB uri)  
+**STRIPE_PRIV** (stripe private key)  
+**STRIPE_PUB**  (stripe public key)
 
 
-# API Endpoints:( **img URL are fake and not working**)
+# API Endpoints:
 
 ## /users  
 - GET - responds with *users* object with array of all users
@@ -22,12 +28,12 @@ $ sudo systemctl start mongod - starts mongodb locally
     - POST - `{ email }` - responds with user by given email
     - PATCH - `{ email , age: ...}` - updates shop by given email
     - DELETE -` { email }` - deletes user
-- ### /coffee
+- ### /users/coffee
     - PATCH - `{ email } `- updates coffee count by 1
 ## /shops
 - GET - responds with *shops* object with array of all coffee shops
 - POST - `{ name, email, lat , long, description , avatar_url}`
-- ### /users/:shop_id
+- ### /shops/:shop_id
     - GET - responds with shop by given shop_id
 - ### /shops/email
     - POST - `{ email }` - responds with shop by given email
@@ -48,3 +54,7 @@ $ sudo systemctl start mongod - starts mongodb locally
     - PATCH - updates status by order order_id `{ order_id }`
 - ### /orders/total/:shop_id
     - GET - responds with sum of all items for given shop_id
+
+# Extras
+### generateOrders.ts
+- Generates **n** random orders for random shop_id / user_id and date range and saves it on **random_orders.json**
