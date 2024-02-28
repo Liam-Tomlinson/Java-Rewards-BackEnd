@@ -33,8 +33,8 @@ const items = {
   };
   
   function getRandomDate() {
-    const start = new Date('2023-12-23').getTime();
-    const end = new Date('2024-02-24').getTime();
+    const start = new Date('2023-12-01').getTime();
+    const end = new Date('2024-02-28').getTime();
     const randomTime = start + Math.random() * (end - start);
     return new Date(randomTime);
   }
@@ -44,7 +44,7 @@ const items = {
   function getRandomOrder(shop_id, user_id) {
     const orderId = currentOrderId++;
     const date = getRandomDate();
-    const orderItems = [];
+    const orderItems:any = [];
   
     let totalCost = 0;
   
@@ -53,12 +53,13 @@ const items = {
     const numberOfItems = Math.floor(Math.random() * 2) + 1;
   
     for (let i = 0; i < numberOfItems; i++) {
-      const itemName = shuffledItems[i];
-      const price = items[itemName];
-      const quantity = Math.floor(Math.random() * 2) + 1; 
+      const itemName:string = shuffledItems[i];
+      const price:number = items[itemName];
+      const quantity:number = Math.floor(Math.random() * 2) + 1; 
       const itemCost = price * quantity;
       totalCost += itemCost;
-      orderItems.push({ item_name: itemName, price: price, quantity: quantity });
+      const order = { item_name: itemName, price: price, quantity: quantity }
+      orderItems.push(order);
     }
   
     const newOrder = {

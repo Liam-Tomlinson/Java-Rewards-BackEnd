@@ -32,8 +32,8 @@ var items = {
     "Caffè Mocha": 5
 };
 function getRandomDate() {
-    var start = new Date('2023-12-23').getTime();
-    var end = new Date('2024-02-24').getTime();
+    var start = new Date('2023-12-01').getTime();
+    var end = new Date('2024-02-28').getTime();
     var randomTime = start + Math.random() * (end - start);
     return new Date(randomTime);
 }
