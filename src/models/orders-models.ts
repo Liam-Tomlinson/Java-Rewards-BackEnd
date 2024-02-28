@@ -22,7 +22,7 @@ interface Order extends Object {
   year?: any;
   month?: any;
   order_id?: number;
-
+  status: string;
 
 }
 interface FilterBy {
@@ -37,7 +37,7 @@ type Item = {
   price: number;
 };
 export const insertOrder = async (order: Order) => {
-  const { user_email, shop_email, items } = order;
+  const { user_email, shop_email, items, status } = order;
   if (!user_email || !shop_email || !items) {
     return Promise.reject({
       status: 400,
@@ -79,6 +79,10 @@ export const insertOrder = async (order: Order) => {
       status: "open",
       items: items
     };
+    if (status === "paid") {
+      newOrder.status = "paid"
+
+    }
     const updateOrder = await Orders.findOneAndUpdate(
       { shop_id: shop._id, user_id: user._id },
       { $push: { orders: newOrder } },
@@ -346,8 +350,8 @@ export const updateOrderById = async (order: Order) => {
     throw error;
   }
 };
-export const fetchTotalItems = async (shop_id:string) => {
-  
+export const fetchTotalItems = async (shop_id: string) => {
+
   const items = await Orders.aggregate([
     { $match: { 'shop_id': Number(shop_id) } },
     { $unwind: "$orders" },
