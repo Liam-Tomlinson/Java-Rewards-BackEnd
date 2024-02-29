@@ -97,6 +97,7 @@ export const insertOrder = async (order: Order) => {
   }
 };
 export const fetchOrders = async (filterBy: FilterBy = {}) => {
+  console.log(filterBy)
   let query: any = {};
   console.log(filterBy)
   let orders
