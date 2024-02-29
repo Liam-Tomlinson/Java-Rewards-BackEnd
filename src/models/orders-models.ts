@@ -183,13 +183,20 @@ export const fetchOrders = async (filterBy: FilterBy = {}) => {
     orders = await Orders.aggregate(pipeline).toArray();
   }
   else if (!filterBy.year && filterBy.user_id && filterBy.shop_id) {
+    // currently not working as intended
     query.user_id = filterBy.user_id
     query.shop_id = filterBy.shop_id;
+    
 
     orders = await Orders.find(query).toArray();
   }
   else if (filterBy.year && filterBy.user_id && filterBy.shop_id) {
-
+    if (filterBy.user_id.length > 7){
+      filterBy.user_id = new ObjectId(filterBy.user_id)
+    }
+    else {
+      filterBy.user_id = Number(filterBy.user_id)
+    }
     let pipeline = [
       {
         $match: {
@@ -236,7 +243,12 @@ export const fetchOrders = async (filterBy: FilterBy = {}) => {
     orders = await Orders.aggregate(pipeline).toArray()
   }
   else if (filterBy.year && filterBy.user_id && !filterBy.shop_id) {
-
+    if (filterBy.user_id.length > 7){
+      filterBy.user_id = new ObjectId(filterBy.user_id)
+    }
+    else {
+      filterBy.user_id = Number(filterBy.user_id)
+    }
     let pipeline = [
       {
         $match: {
@@ -330,6 +342,7 @@ export const fetchOrders = async (filterBy: FilterBy = {}) => {
     orders = await Orders.aggregate(pipeline).toArray()
   }
   else {
+   
     orders = await Orders.find(query).toArray();
   }
 
