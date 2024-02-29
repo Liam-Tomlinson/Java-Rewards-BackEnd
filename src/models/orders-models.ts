@@ -103,8 +103,14 @@ export const fetchOrders = async (filterBy: FilterBy = {}) => {
   let orders
   let pipeline
   if (!filterBy.year && filterBy.user_id && !filterBy.shop_id) {
+    if (filterBy.user_id.length > 7){
+      filterBy.user_id = new ObjectId(filterBy.user_id)
+    }
+    else {
+      filterBy.user_id = Number(filterBy.user_id)
+    }
     pipeline = [
-      { $match: { 'user_id': filterBy.user_id } },
+      { $match: { 'user_id': filterBy.user_id} },
       { $unwind: '$orders' },
       {
         $project: {

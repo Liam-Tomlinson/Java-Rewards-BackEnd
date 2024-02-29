@@ -15,10 +15,10 @@ export const postOrder = async (req: Request, res: Response, next: NextFunction)
 export const getOrders = async (req: Request, res: Response, next: NextFunction) => {
   try {
       const { user_id, shop_id, month,year } = req.query
-
+console.log(user_id)
       const filterBy:any = {
-          user_id: user_id ? parseInt(user_id as string, 10) : undefined,
-          shop_id: shop_id ? parseInt(shop_id as string, 10) : undefined,
+          user_id: user_id,
+          shop_id: shop_id ,
           month: month ? month : undefined,
           year: year ? year : undefined
       };
